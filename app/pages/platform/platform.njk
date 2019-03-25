@@ -1,0 +1,193 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}{{ detail.name }}_{{ detail.name }}可靠安全吗_{{ detail.name }}怎么样_互金跟投{% endblock %}
+{% block keywords %}{{ detail.name }},{{ detail.name }}可靠吗,{{ detail.name }}安全吗,{{ detail.name }}怎么样{% endblock %}
+{% block description %}{{ detail.name }}官网资料，包括平台档案数据、用户口碑、新闻动态等，是由互金跟投用心收集的，为网贷投资者了解{{ detail.name }}可靠吗、{{ detail.name }}安全吗、{{ detail.name }}怎么样提供参考。{% endblock %}
+
+{% block extraCss %}
+  {%- include "./platform.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  {% include "../components/platform_summary2/platform_summary2.njk" %}
+
+  <div class="clearfix">
+    <div class="pc-block-3-2">
+      {# 详情导航条 #}
+      {% include "../components/platform/navigation/index.njk" %}
+
+      <div class="detail-main">
+        {# 平台详情 - 争议信息 黑名单 #}
+        {% include "../components/platform/zheng_yi_xin_xi/zheng_yi_xin_xi.njk" %}
+
+        {# 平台详情 - 信息披露追踪 #}
+        {% include "../components/platform/xin_xi_pi_lu_zhui_zong.njk" %}
+
+        {# 平台详情 - 专家简评 #}
+        {% include "../components/platform/zhu_jia_jian_ping.njk" %}
+
+        {# seo平台广告位 #}
+        {% if followImg and followImg.platform_wx_img %}
+        {% set followSrc = followImg.platform_wx_img %}
+        {% include "../components/ad/follow.njk" %}
+        {% endif %}
+
+        {# 平台详情 - 专家深度测评 #}
+        {% include "../components/platform/zhu_jia_shen_du_ce_ping.njk" %}
+
+        {#// :ad adPlatform #}
+        {% if ads and ads.ad_detail_m and ads.ad_detail_m.isOk %}
+        {% set item = ads.ad_detail_m %}
+          {% include "../components/ad/adPlatform.njk" %}
+        {% endif %}
+
+        {# 平台详情 - 测评追踪 #}
+        {% include "../components/platform/ce_ping_zhui_zong.njk" %}
+
+        {# 平台详情 - 平台舆论追踪 #}
+        {% include "../components/platform/ping_tai_yu_lun_zhui_zong.njk" %}
+
+        {# 平台详情 - 平台问答 #}
+        {% include "../components/platform/ping_tai_wen_da.njk" %}
+
+        {# 平台详情 - 投友点评 #}
+        {% include "../components/platform/tou_you_dian_ping.njk" %}
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>平台动态</h2>
+        </div>
+        <ul class="news-list">
+          {% for item in ptdt %}
+            <li class="clearfix">
+              <a class="left" href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+              </a>
+              <div class="right">
+                <p><strong><a href="{{ item.href }}">{{ item.title }}</a></strong></p>
+                <p>{{ item.intro }}</p>
+                <div>
+                  {{ item.time }}
+                  {% for label in item.labels %}
+                    <a href="{{ label.href }}">{{ label.inner }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>平台新闻</h2>
+        </div>
+        <ul class="news-list">
+          {% for item in news %}
+            <li class="clearfix">
+              <a class="left" href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+              </a>
+              <div class="right">
+                <p><strong><a href="{{ item.href }}">{{ item.title }}</a></strong></p>
+                <p>{{ item.intro }}</p>
+                <div>
+                  {{ item.time }}
+                  {% for label in item.labels %}
+                    <a href="{{ label.href }}">{{ label.inner }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>相关平台推荐</h2>
+        </div>
+        <ul class="recom clearfix">
+          {% for item in recom %}
+            <li>
+              <div>
+                <a href="{{ item.href + '/' }}" title="{{ item.name }}">
+                  <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.name }}" />
+                </a>
+              </div>
+              <p class="rebate">{{ item.rebate }}%</p>
+              <p>预期年化收益</p>
+              <p>
+                <a href="{{ item.href + '/beian/' }}">档案</a>
+                <a href="{{ item.href + '/news/' }}">资讯</a>
+                <a href="{{ item.href + '/pingji/' }}">评测</a>
+              </p>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="pc-block-3-1">
+      {#// :ad adPlatform #}
+      {% if ads and ads.ad_detail_pc and ads.ad_detail_pc.isOk %}
+      {% set item = ads.ad_detail_pc %}
+        {% include "../components/ad/adPlatform.njk" %}
+      {% endif %}
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>行业新闻</h3>
+          <a class="more" href="{{ hyxw.more }}">更多新闻 &gt;</a>
+        </div>
+        <ul class="img-link-list clearfix">
+          {% for item in hyxw.items %}
+            <li>
+              <div class="clearfix">
+                <a href="{{ item.href }}"><img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" /></a>
+                <a href="{{ item.href }}">{{ item.text }}</a>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>专题推荐</h3>
+          <a class="more" href="{{ zt.more }}">更多专题 &gt;</a>
+        </div>
+
+        <ul class="zt-list zt-list-v clearfix">
+          {% for item in zt.items %}
+            <li>
+              <a href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                <p>{{ item.text }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% include "../components/rank_3type/rank_3type_small.njk" %}
+    </div>
+  </div>
+
+  {# 弹窗下载 #}
+  {% include "../components/platform_popup/platform_popup.njk" %}
+
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./platform.in.wp.js" %}
+{% endblock %}
+
+{% block extraBody %}
+  <script src="/js/jquery.qrcode.min.js?version={{ appVersion }}"></script>
+{% endblock %}

@@ -1,0 +1,48 @@
+{# 平台详情 - 信息披露追踪 #}
+<div id="xxplzz" class="pc-block m-block xxplzz platform-common">
+  <div class="plate-head clearfix">
+    <h2>信息披露追踪</h2>
+  </div>
+  {% if xxplzz.property_detail !=='' %}
+  <div class="article">
+    {% if xxplzz.property_detail!='' %}
+    <div class="row clearfix">
+      <span class="left">底层资产</span>
+      <span class="right elli-1">{{ xxplzz.property_detail }}</span>
+    </div>
+    {% endif %}
+    {% if xxplzz.bg_shareholder!='' %}
+    <div class="row clearfix">
+      <span class="left">前10大股东</span>
+      <span class="right elli-1">{{ xxplzz.bg_shareholder }}</span>
+    </div>
+    {% endif %}
+    {% if xxplzz.bg_financing!='' %}
+    <div class="row clearfix">
+      <span class="left">融资情况</span>
+      <span class="right elli-1">{{ xxplzz.bg_financing }}</span>
+    </div>
+    {% endif %}
+    {% if xxplzz.bg_control!='' %}
+    <div class="row clearfix">
+      <span class="left">疑似实际控股人</span>
+      <span class="right elli-1">{{ xxplzz.bg_control }}</span>
+    </div>
+    {% endif %}
+  </div>
+  <div>
+    <a href="#" class="end-btn popup-img">
+      查看全部内容
+    </a>
+  </div>
+  {% else %}
+  <div class="no-article">
+    暂无内容
+  </div>
+  <div>
+    <a href="#" class="noarticle-btn popup-img">
+      申请追踪
+    </a>
+  </div>
+  {% endif %}
+</div>

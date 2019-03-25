@@ -1,0 +1,79 @@
+@import "../../base/base-var.less";
+
+.rank3 {
+  .dimension {
+    float: left;
+    width: 32%;
+    margin-top: @gap-normal-pc;
+
+    & > div {
+      h3 {
+        display: inline-block;
+        font-size: @font-size-smaller;
+        background: @color-main;
+        color: white;
+        padding: @gap-small-m;
+        @media screen and (max-width: 540px) {
+          display: block;
+          text-align: center;
+        }
+      }
+      span {
+        font-size: @font-size-smallest;
+        color: @color-subtitle;
+        margin-left: @gap-small-pc;
+      }
+    }
+
+    &:nth-child(n + 2) {
+      margin-left: 2%;
+    }
+
+    table {
+      border: 2px solid @color-divider;
+      width: 100%;
+      border-collapse: separate;
+
+      @media screen and (max-width: 540px) {
+        padding: @gap-small-m;
+        font-size: @font-size-smallest;
+      }
+
+      @media screen and (min-width: 540px) {
+        padding: @gap-normal-pc;
+        font-size: @font-size-smaller;
+      }
+    }
+
+    tr {
+      line-height: 2;
+
+      span {
+        font-size: 12px;
+        background: @color-main;
+        color: white;
+        display: inline-block;
+        width: @font-size-normal;
+        height: @font-size-normal;
+        line-height: @font-size-normal;
+        text-align: center;
+        vertical-align: text-top;
+        border-radius: 2px;
+      }
+
+      &:nth-child(n + 4) {
+        span {
+          background: darken(@color-divider, 20%);
+        }
+      }
+    }
+
+    th {
+      color: @color-subtitle;
+    }
+
+    td {
+      text-align: center;
+    }
+  }
+}

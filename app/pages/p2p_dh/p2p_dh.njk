@@ -1,0 +1,87 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}P2P网贷平台_网贷平台_网络借贷平台_互金跟投{% endblock %}
+{% block keywords %}网贷平台,网络借贷平台,P2P网贷平台{% endblock %}
+{% block description %}互金网贷平台地图汇集了国内所有P2P网贷平台，您可以按省份或按字母查找网络借贷平台。{% endblock %}
+
+{% block extraHead %}
+  <link rel="canonical" href="{{ wwwOrigin + '/p2p-dh/' }}" />
+{% endblock %}
+
+{% block extraCss %}
+  {%- include "./p2p_dh.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  <ul class="alphabet clearfix m-block">
+    {% for item in alphabet %}
+      <li>
+        {% if item.current %}
+          <span>{{ item.letter}}</span>
+        {% else %}
+          <a href="{{ item.href }}">{{ item.letter }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="filter-result">
+    {% for item in results.top20 %}
+      <a href="{{ item.href }}" title="{{ item.title }}">
+        <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+      </a>
+    {% endfor %}
+  </div>
+  <div class="filter-result others">
+    {% for item in results.others %}
+      <a href="{{ item.href }}" title="{{ item.title }}">
+        <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+      </a>
+    {% endfor %}
+  </div>
+  {% if results.others.length > 0 %}
+    <div class="switch-more">查看全部</div>
+  {% endif %}
+  {% if results.top20.length == 0 %}
+    <div class="no-result">暂无结果</div>
+  {% endif %}
+
+  <div class="clearfix">
+    <div class="letters m-hidden pc-block">
+      <div class="head">按地区地域</div>
+      <ul class="letter">
+        {% for letter, provinces in platformMap.letterMap %}
+          <li class="clearfix">
+            <div>{{ letter }}</div>
+            <ul>
+              {% for p in provinces %}
+                <li><a href="#{{ p }}">{{ p }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <ul class="platform-map">
+      {% for item in platformMap.list %}
+        <li class="pc-block m-block">
+          <div class="plate-head clearfix">
+            <div id="{{ item.province }}" class="title">{{ item.province }}({{ item.count }})</div>
+          </div>
+          <ul class="list clearfix">
+            {% for p in item.platforms %}
+              <li><a href="{{ p.href }}">{{ p.inner }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./p2p_dh.in.wp.js" %}
+{% endblock %}

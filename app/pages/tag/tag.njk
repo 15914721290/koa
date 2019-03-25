@@ -1,0 +1,106 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}【{{ tagName }}】{{ shortTitle }}_互金跟投{% endblock %}
+{% block keywords %}{{ tagName }}{{ (',' + shortTitle) if shortTitle }}{% endblock %}
+{% block description %}互金跟投{{ tagName }}版块为您提供{{ tagName }}{{ shortTitle }}相关资讯和百科。{% endblock %}
+
+{% block extraHead %}
+  <link rel="canonical" href="{{ pagination.first }}" />
+{% endblock %}
+
+{% block extraCss %}
+  {%- include "./tag.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  <div class="clearfix">
+    <div class="pc-block-3-2">
+      <div class="m-block">
+        <div class="plate-head clearfix">
+          <h1>{{ tagName }}</h1>
+        </div>
+        <ul class="news-list">
+          {% for item in tagList %}
+            <li class="clearfix">
+              <a class="left" href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+              </a>
+              <div class="right">
+                <p><strong><a href="{{ item.href }}">{{ item.title }}</a></strong></p>
+                <p>{{ item.intro }}</p>
+                <div>
+                  {{ item.time }}
+                  {% for label in item.labels %}
+                    <a href="{{ label.href }}">{{ label.inner }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+
+        {% include "../components/pagination/pagination.njk" %}
+      </div>
+    </div>
+
+    <div class="pc-block-3-1">
+      <div class="m-block related clearfix">
+        {% for item in related %}
+          <a href="{{ item.href }}">
+            {{ item.inner }}
+          </a>
+        {% endfor %}
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>推荐阅读</h2>
+          <a class="more" href="{{ zxph.more }}">更多资讯 &gt;</a>
+        </div>
+        <ul class="zt-list zt-list-v clearfix">
+          {% for item in tjyd %}
+            <li>
+              <a href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                <p>{{ item.text }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>热门资讯</h2>
+          <a class="more" href="{{ zxph.more }}">更多资讯 &gt;</a>
+        </div>
+        <ul class="link-list ordered-list">
+          {% for item in zxph.items %}
+            <li>
+              <span>{{ loop.index }}</span>
+              <a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>今日头条</h2>
+        </div>
+        <ul class="link-list">
+          {% for item in jrtt %}
+            <li><a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./tag.in.wp.js" %}
+{% endblock %}

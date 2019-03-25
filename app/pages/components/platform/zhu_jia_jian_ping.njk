@@ -1,0 +1,31 @@
+{# 平台详情 - 专家简评 #}
+<div id="zjjp" class="pc-block m-block zjjp platform-common">
+  <div class="plate-head clearfix">
+    <h2>专家简评</h2>
+    {% if zjjp.test_time !=='' and  zjjp.test_info !=='' %}
+      <span class="more" >测评日期:{{ zjjp.test_time }}</span>
+    {% endif %}
+  </div>
+  {% if zjjp.test_info !=='' %}
+    <div class="article">
+      {{ zjjp.test_info | safe }}
+    </div>
+    {% if zjjp.isOlderThan3Month %}
+    <div>
+      <a href="#" class="end-btn popup-img">
+        当前测评已过期，点我申请更新测评
+      </a>
+    </div>
+    {% endif %}
+  {% else %}
+    <div class="no-article">
+      暂无简评
+    </div>
+    <div>
+      <a href="#" class="noarticle-btn popup-img">
+        申请简评
+      </a>
+    </div>
+  {% endif %}
+
+</div>

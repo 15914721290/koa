@@ -1,0 +1,81 @@
+<div class="pc-block m-block rank3 clearfix">
+  <div class="plate-head clearfix">
+    <h2 class="block-title">平台排行榜</h2>
+  </div>
+  <div class="clearfix">
+    <div class="dimension">
+      <div>
+        <h3>专家评级</h3>
+        <span class="m-hidden">跟投专家最新评级排名</span>
+      </div>
+      <table>
+        <thead class="m-hidden">
+          <tr>
+            <th>排名</th>
+            <th>投资平台</th>
+            <th>平台评级</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in rank3.zjpj %}
+            <tr>
+              <td><span>{{ loop.index }}</span></td>
+              <td><a href="{{ item.href }}">{{ item.name }}</a></td>
+              <td class="m-hidden">{{ item.score }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dimension">
+      <div>
+        <h3>热门搜索</h3>
+        <span class="m-hidden">本月平台搜索频次排名</span>
+      </div>
+      <table>
+        <thead class="m-hidden">
+          <tr>
+            <th>排名</th>
+            <th>投资平台</th>
+            <th>平台搜索量</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in rank3.rmss %}
+            <tr>
+              <td><span>{{ loop.index }}</span></td>
+              <td><a href="{{ item.href }}">{{ item.name }}</a></td>
+              <td class="m-hidden">{{ item.search }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dimension">
+      <div>
+        <h3>人气指数</h3>
+        <span class="m-hidden">本月平台点击量排名</span>
+      </div>
+      <table>
+        <thead class="m-hidden">
+          <tr>
+            <th>排名</th>
+            <th>投资平台</th>
+            <th>平台点击量</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in rank3.rqzs %}
+            <tr>
+              <td><span>{{ loop.index }}</span></td>
+              <td><a href="{{ item.href }}">{{ item.name }}</a></td>
+              <td class="m-hidden">{{ item.click }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

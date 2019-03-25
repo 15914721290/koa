@@ -1,0 +1,220 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}{{ pageTitle }}新闻_资讯_动态_互金跟投{% endblock %}
+{% block keywords %}{{ pageTitle }}新闻,{{ pageTitle }}资讯,{{ pageTitle }}动态{% endblock %}
+{% block description %}互金跟投{{ pageTitle }}资讯栏目主要提供最新{{ pageTitle }}新闻、热门{{ pageTitle }}资讯，让你足不出户掌握全球{{ pageTitle }}动态。{% endblock %}
+
+{% block extraHead %}
+  <link rel="canonical" href="{{ pagination.first }}" />
+{% endblock %}
+
+{% block extraCss %}
+  {%- include "./news_list.css" -%}
+{% endblock %}
+
+{% block content %}
+  {#// :ad 顶部（M） ad2_m #}
+  {% if ads.ad2_m and ads.ad2_m.length !== 0 %}
+  <div class="arena pc-hidden ad2_m">
+    {% for item in ads.ad2_m %}
+      {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+        <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+      {% if item.href %}</a>{% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% include "../components/categories/categories.njk" %}
+
+  {# // :ad 顶部（PC） ad2_pc #}
+  {% if ads.ad2_pc and ads.ad2_pc.length !== 0 %}
+  <div class="arena ad-pc-block m-hidden ad2_pc">
+    {% for item in ads.ad2_pc %}
+      {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+        <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+      {% if item.href %}</a>{% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  <div class="clearfix">
+    <div class="pc-block-3-2">
+      <div class="m-block">
+        <div class="plate-head clearfix">
+          <h1>最新{{ pageTitle }}</h1>
+        </div>
+        <ul class="news-list">
+          {% for item in newsList %}
+            <li class="clearfix">
+              <a class="left" href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+              </a>
+              <div class="right">
+                <p><strong><a href="{{ item.href }}">{{ item.title }}</a></strong></p>
+                <p>{{ item.intro }}</p>
+                <div>
+                  {{ item.time }}
+                  {% for label in item.labels %}
+                    <a href="{{ label.href }}">{{ label.inner }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+
+        {% include "../components/pagination/pagination.njk" %}
+      </div>
+    </div>
+
+    <div class="pc-block-3-1">
+      <div class="arena m-hidden ad2_1">
+        {% for item in ads.ad2_1 %}
+          <p>
+            {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+              <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+            {% if item.href %}</a>{% endif %}
+          </p>
+        {% endfor %}
+      </div>
+
+      {#// :ad 第一屏右侧（上） ad2_right_top #}
+      {% if ads.ad2_right_top and ads.ad2_right_top.length !== 0 %}
+      <div class="arena m-block ad2_right_top">
+        {% for item in ads.ad2_right_top %}
+          <p>
+            {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+              <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+            {% if item.href %}</a>{% endif %}
+          </p>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {#// :ad 第一屏右侧（下） ad2_right_bottom #}
+      {% if ads.ad2_right_bottom and ads.ad2_right_bottom.length !== 0 %}
+      <div class="arena ad-pc-block m-hidden ad2_right_bottom">
+        {% for item in ads.ad2_right_bottom %}
+          <p>
+            {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+              <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+            {% if item.href %}</a>{% endif %}
+          </p>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>今日头条</h2>
+        </div>
+        <ul class="img-link-list">
+          <li>
+            <div class="clearfix">
+              <a href="{{ jrtt.top.href }}"><img onerror="this.src='/image/default.png'" src="{{ jrtt.top.img }}" alt="{{ jrtt.top.text }}" /></a>
+              <a href="{{ jrtt.top.href }}">{{ jrtt.top.text }}</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="link-list">
+          {% for item in jrtt.others %}
+            <li><a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block arena m-hidden ad2_3">
+        {% for item in ads.ad2_3 %}
+          {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+            <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+          {% if item.href %}</a>{% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="baike-tabs">
+          <ul class="plate-tabs clearfix">
+            <li class="baike-tab active"><h2>{{ channel }}百科</h2></li>
+            <li class="baike-tab"><h2>全部百科</h2></li>
+          </ul>
+          <div class="plate-showcase clearfix">
+            <ul class="link-list baike-showcase active">
+              {% for item in categoryBaike %}
+                <li>
+                  <a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+            <ul class="link-list baike-showcase">
+              {% for item in allBaike %}
+                <li>
+                  <a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc-block arena m-hidden ad2_4">
+        {% for item in ads.ad2_4 %}
+          {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+            <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+          {% if item.href %}</a>{% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>专题推荐</h2>
+          <a class="more" href="{{ zt.more }}">更多专题 &gt;</a>
+        </div>
+
+        <ul class="zt-list zt-list-v clearfix">
+          {% for item in zt.items %}
+            <li>
+              <a href="{{ item.href }}" title="{{ item.text }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                <p>{{ item.text }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>热门资讯</h2>
+          <a class="more" href="{{ zxph.more }}">更多资讯 &gt;</a>
+        </div>
+        <ul class="link-list ordered-list">
+          {% for item in zxph.items %}
+            <li>
+              <span>{{ loop.index }}</span>
+              <a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pc-block arena m-hidden ad1_5">
+    {% for item in ads.ad1_5 %}
+      {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+        <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+      {% if item.href %}</a>{% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block extraBody %}
+  <script src="/js/swiper.2.7.6.min.js?version={{ appVersion }}"></script>
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./news_list.in.wp.js" %}
+{% endblock %}

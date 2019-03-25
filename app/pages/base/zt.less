@@ -1,0 +1,79 @@
+// 专题组件特有的样式
+@import "./base-var.less";
+
+ul.zt-list {
+  li {
+    @media screen and (max-width: 540px) {
+      float: left;
+      width: 49%;
+      &:nth-child(2n) {
+        margin-left: 2%;
+      }
+    }
+  }
+
+  a {
+    position: relative;
+    width: 100%;
+    display: block;
+    height: 140px;
+
+    @media screen and (max-width: 540px) {
+      margin-top: @gap-normal-m;
+    }
+    @media screen and (min-width: 540px) {
+      margin-top: @gap-normal-pc;
+    }
+
+    &:hover p {
+      color: @color-main;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    p {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      z-index: 1;
+      color: white;
+      background: @color-mask;
+      text-align: center;
+      font-size: @font-size-normal;
+      padding: 4px 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+ul.zt-list-v {
+  li {
+    @media screen and (max-width: 540px) {
+      float: left;
+      width: 49%;
+      &:nth-child(2n) {
+        margin-left: 2%;
+      }
+    }
+  }
+}
+
+ul.zt-list-h {
+  li {
+    @media screen and (min-width: 540px) {
+      float: left;
+      width: 24%;
+      margin-left: 1.333%;
+
+      &:nth-child(4n+1) {
+        margin-left: 0;
+      }
+    }
+  }
+}

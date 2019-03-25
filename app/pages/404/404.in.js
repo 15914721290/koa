@@ -1,0 +1,1 @@
+require('../components/pc_hot_search/pc_hot_search')

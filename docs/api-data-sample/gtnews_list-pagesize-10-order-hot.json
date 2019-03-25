@@ -1,0 +1,413 @@
+{
+  "list": [{
+    "news_id": "6968",
+    "column_id": "158",
+    "news_title": "投资抓钱猫安全吗 抓钱猫CEO张显成介绍",
+    "news_title_short": null,
+    "news_intro": "抓钱猫浙江杭州一家国资参股的P2P网贷平台，投资抓钱猫安全吗，抓钱猫怎么样，互金跟投小编在这里给你整理了抓钱猫CEO张显成介绍，你不妨来了解一下。抓钱猫CEO张显成介绍张显成，抓钱猫董事长兼CEO拥有",
+    "seo_key": "抓钱猫,抓钱猫安全吗",
+    "seo_desc": "抓钱猫浙江杭州一家国资参股的P2P网贷平台，投资抓钱猫安全吗，抓钱猫怎么样，互金跟投小编在这里给你整理了抓钱猫CEO张显成介绍，你不妨来了解一下。",
+    "news_icon": null,
+    "news_img": "http://183.6.116.151:5091/attachment//201807/09/15311042856204.jpg",
+    "news_add_time": "1531895107",
+    "chain_add_time": "1531895108",
+    "news_status": "1",
+    "news_index": "0",
+    "news_remark": null,
+    "start_time": "1531104166",
+    "end_time": "2147483647",
+    "news_label": {
+      "label1": {
+        "platform_id": "1185",
+        "platform_name": "抓钱猫",
+        "platform_name_en": "zhuaqianmao"
+      },
+      "label2": {
+        "column_id": "100",
+        "column_name": "网贷",
+        "column_en_name": "news_wd"
+      },
+      "label3": {
+        "column_id": "158",
+        "column_name": "网贷新闻",
+        "column_en_name": "news_wd_wdxw"
+      }
+    },
+    "relation_pf_id": "1185",
+    "relation_pf_name": null,
+    "click_num": "62",
+    "click_num_total": "553",
+    "author": "李子",
+    "source": "互联网",
+    "publisher": "lizixuan",
+    "last_change_time": "1531895107",
+    "last_change_user": "lizixuan",
+    "news_type": "0"
+  }, {
+    "news_id": "7517",
+    "column_id": "121",
+    "news_title": "互金跟投测评：2018年7月最新447家P2P网贷平台测评汇总",
+    "news_title_short": null,
+    "news_intro": "本测评原创首发于互金跟投微信公众号（ID：hjgentou），第18次汇总。测评仅提供给P2P投资人作为投资参考，不作具体投资建议。上个月14号，互金跟投更新了最新一期的平台库。6月16日，唐小僧暴雷",
+    "seo_key": "P2P平台,P2P网贷平台测评",
+    "seo_desc": "本测评原创首发于互金跟投微信公众号（ID：hjgentou），第18次汇总。测评仅提供给P2P投资人作为投资参考，不作具体投资建议。",
+    "news_icon": null,
+    "news_img": "http://183.6.116.151:5091/attachment//201807/13/15314475973157.jpg",
+    "news_add_time": "1531465428",
+    "chain_add_time": "1531465429",
+    "news_status": "1",
+    "news_index": "0",
+    "news_remark": null,
+    "start_time": "1531446434",
+    "end_time": "2147483647",
+    "news_label": {
+      "label1": null,
+      "label2": {
+        "column_id": "100",
+        "column_name": "网贷",
+        "column_en_name": "news_wd"
+      },
+      "label3": {
+        "column_id": "121",
+        "column_name": "跟投精选",
+        "column_en_name": "news_wd_gtjx"
+      }
+    },
+    "relation_pf_id": "0",
+    "relation_pf_name": null,
+    "click_num": "56",
+    "click_num_total": "675",
+    "author": "gt",
+    "source": "互金跟投",
+    "publisher": "liying",
+    "last_change_time": "1531465428",
+    "last_change_user": "liying",
+    "news_type": "1"
+  }, {
+    "news_id": "8023",
+    "column_id": "121",
+    "news_title": "互金跟投原创：2018年7月196家最新P2P问题平台名单",
+    "news_title_short": null,
+    "news_intro": "6和7月雷潮不断，49天居然雷了169家平台，虽然说大浪淘沙始见金，但是，雷潮来势汹汹却不见停止，整个市场都人心惶惶。所以，今天跟投君为大家统计了196家（6月的95家问题平台，7月到16日出现了10",
+    "seo_key": "P2P平台,P2P问题平台名单",
+    "seo_desc": "6和7月雷潮不断，49天居然雷了169家平台，虽然说大浪淘沙始见金，但是，雷潮来势汹汹却不见停止，整个市场都人心惶惶。",
+    "news_icon": null,
+    "news_img": "http://183.6.116.151:5091/attachment//201807/20/15320767442319.jpg",
+    "news_add_time": "1532076743",
+    "chain_add_time": "1532076744",
+    "news_status": "1",
+    "news_index": "0",
+    "news_remark": null,
+    "start_time": "1532075997",
+    "end_time": "2147483647",
+    "news_label": {
+      "label1": null,
+      "label2": {
+        "column_id": "100",
+        "column_name": "网贷",
+        "column_en_name": "news_wd"
+      },
+      "label3": {
+        "column_id": "121",
+        "column_name": "跟投精选",
+        "column_en_name": "news_wd_gtjx"
+      }
+    },
+    "relation_pf_id": "0",
+    "relation_pf_name": null,
+    "click_num": "51",
+    "click_num_total": "120",
+    "author": "gt",
+    "source": "互金跟投",
+    "publisher": "liying",
+    "last_change_time": "0",
+    "last_change_user": null,
+    "news_type": "1"
+  }, {
+    "news_id": "8059",
+    "column_id": "123",
+    "news_title": "礼德财富董事长跑路 疯狂抛售高息转让标",
+    "news_title_short": null,
+    "news_intro": "广州地区的P2P平台一向以监管严格著称。不过，这次广州也爆雷了。爆雷的平台周四（7月19日）才在广州市金融办开会，会议主题是关于广州网贷行业整改与爆雷防范。会议才结束，次日老板就跑路消失了。7月23日",
+    "seo_key": "礼德财富,礼德财富董事长跑路",
+    "seo_desc": "广州地区的P2P平台一向以监管严格著称。不过，这次广州也爆雷了。爆雷的平台周四（7月19日）才在广州市金融办开会，会议主题是关于广州网贷行业整改与爆雷防范。会议才结束，次日老板就跑路消失了。",
+    "news_icon": null,
+    "news_img": "http://183.6.116.151:5091/attachment//201807/23/15323130666051.png",
+    "news_add_time": "1532313064",
+    "chain_add_time": "1532313066",
+    "news_status": "1",
+    "news_index": "0",
+    "news_remark": null,
+    "start_time": "1532312703",
+    "end_time": "2147483647",
+    "news_label": {
+      "label1": {
+        "platform_id": "1042",
+        "platform_name": "礼德财富",
+        "platform_name_en": "leadercf"
+      },
+      "label2": {
+        "column_id": "100",
+        "column_name": "网贷",
+        "column_en_name": "news_wd"
+      },
+      "label3": {
+        "column_id": "123",
+        "column_name": "平台动态",
+        "column_en_name": "news_wd_ptdt"
+      }
+    },
+    "relation_pf_id": "1042",
+    "relation_pf_name": null,
+    "click_num": "24",
+    "click_num_total": "46",
+    "author": "李子",
+    "source": "互联网",
+    "publisher": "lizixuan",
+    "last_change_time": "1532313064",
+    "last_change_user": "lizixuan",
+    "news_type": "0"
+  }, {
+    "news_id": "7935",
+    "column_id": "122",
+    "news_title": "P2P雷潮中的净土 广州地区的平台竟然无一暴雷",
+    "news_title_short": null,
+    "news_intro": "众所周知，最近的P2P行业正经历着一个艰难时期，跟投君也和大家的心是一样的，都是揪着的。有投友甚至都调侃道早上打招呼的方式从“早上好”变成了“今天雷了吗？”虽然这是在开玩笑，但也看出投友们的无奈，以及",
+    "seo_key": "P2P雷潮,广州p2p网贷",
+    "seo_desc": "众所周知，最近的P2P行业正经历着一个艰难时期，跟投君也和大家的心是一样的，都是揪着的。有投友甚至都调侃道早上打招呼的方式从“早上好”变成了“今天雷了吗？”虽然这是在开玩笑，但也看出投友们的无奈",
+    "news_icon": null,
+    "news_img": "http://183.6.116.151:5091/attachment//201807/20/15320526062137.jpg",
+    "news_add_time": "1532052717",
+    "chain_add_time": "1532052719",
+    "news_status": "1",
+    "news_index": "0",
+    "news_remark": null,
+    "start_time": "1532051717",
+    "end_time": "2147483647",
+    "news_label": {
+      "label1": null,
+      "label2": {
+        "column_id": "100",
+        "column_name": "网贷",
+        "column_en_name": "news_wd"
+      },
+      "label3": {
+        "column_id": "122",
+        "column_name": "专家专栏",
+        "column_en_name": "news_wd_zjzl"
+      }
+    },
+    "relation_pf_id": "0",
+    "relation_pf_name": null,
+    "click_num": "24",
+    "click_num_total": "98",
+    "author": "gt",
+    "source": "互金跟投",
+    "publisher": "liying",
+    "last_change_time": "1532052717",
+    "last_change_user": "liying",
+    "news_type": "1"
+  }, {
+    "news_id": "8121",
+    "column_id": "158",
+    "news_title": "长生生物第八大股东恒天财富P2P 已亏损1亿",
+    "news_title_short": null,
+    "news_intro": "“YM之王”事件之后，主角长生生物连续6个交易日跌停。但今天的主角不是长生生物，而是它的第8大股东：P2P网贷平台，恒天财富（“中植系”一员）。深交所启动对长生生物公开谴责纪律处分程序，具体程序大家都",
+    "seo_key": "长生生物,长生生物股东",
+    "seo_desc": "“YM之王”事件之后，主角长生生物连续6个交易日跌停。但今天的主角不是长生生物，而是它的第8大股东：P2P网贷平台，恒天财富（“中植系”一员）。",
+    "news_icon": null,
+    "news_img": "http://183.6.116.151:5091/attachment//201807/23/15323353977297.jpg",
+    "news_add_time": "1532335493",
+    "chain_add_time": "1532335494",
+    "news_status": "1",
+    "news_index": "0",
+    "news_remark": null,
+    "start_time": "1532335197",
+    "end_time": "2147483647",
+    "news_label": {
+      "label1": null,
+      "label2": {
+        "column_id": "100",
+        "column_name": "网贷",
+        "column_en_name": "news_wd"
+      },
+      "label3": {
+        "column_id": "158",
+        "column_name": "网贷新闻",
+        "column_en_name": "news_wd_wdxw"
+      }
+    },
+    "relation_pf_id": "0",
+    "relation_pf_name": null,
+    "click_num": "23",
+    "click_num_total": "43",
+    "author": "李子",
+    "source": "互联网",
+    "publisher": "lizixuan",
+    "last_change_time": "1532335493",
+    "last_change_user": "lizixuan",
+    "news_type": "0"
+  }, {
+    "news_id": "8146",
+    "column_id": "122",
+    "news_title": "礼德财富成广州第一雷 跟投很无奈但不意外",
+    "news_title_short": null,
+    "news_intro": "上周，跟投君发了一篇，大概的内容就是阐述广州在雷潮期间无一暴雷平台。文章一出，就有投友在后台留言说，话别说得太满了，这种时期，啥都有可能发生。这不，今天就已经传出广州平台礼德财富董事长跑路的消息。这打",
+    "seo_key": "礼德财富,礼德财富爆雷",
+    "seo_desc": "上周，跟投君发了一篇，大概的内容就是阐述广州在雷潮期间无一暴雷平台。文章一出，就有投友在后台留言说，话别说得太满了，这种时期，啥都有可能发生。这不，今天就已经传出广州平台礼德财富董事长跑路的消息。这打",
+    "news_icon": null,
+    "news_img": "http://183.6.116.151:5091/attachment//201807/24/15323990713233.jpg",
+    "news_add_time": "1532399086",
+    "chain_add_time": "1532399087",
+    "news_status": "1",
+    "news_index": "0",
+    "news_remark": null,
+    "start_time": "1532397749",
+    "end_time": "2147483647",
+    "news_label": {
+      "label1": null,
+      "label2": {
+        "column_id": "100",
+        "column_name": "网贷",
+        "column_en_name": "news_wd"
+      },
+      "label3": {
+        "column_id": "122",
+        "column_name": "专家专栏",
+        "column_en_name": "news_wd_zjzl"
+      }
+    },
+    "relation_pf_id": "0",
+    "relation_pf_name": null,
+    "click_num": "23",
+    "click_num_total": "40",
+    "author": "互金跟投",
+    "source": "互联网",
+    "publisher": "tangjiarong",
+    "last_change_time": "1532399086",
+    "last_change_user": "tangjiarong",
+    "news_type": "0"
+  }, {
+    "news_id": "8061",
+    "column_id": "121",
+    "news_title": "互金跟投听我说第25期：你如何看待监管出面维稳P2P行业",
+    "news_title_short": null,
+    "news_intro": "每周聊一个话题，让大家能够感受到无论发生啥事，互金跟投总会陪在你们身边！当然，跟投君也会分享自己的投资故事和投资观点。大家的留言，跟投君每次都会认真阅读。最近一期的跟投听我说因为跟投君心情实在是沉重，",
+    "seo_key": "P2P,官方维稳P2P",
+    "seo_desc": "每周聊一个话题，让大家能够感受到无论发生啥事，互金跟投总会陪在你们身边！当然，跟投君也会分享自己的投资故事和投资观点。大家的留言，跟投君每次都会认真阅读。",
+    "news_icon": null,
+    "news_img": "http://183.6.116.151:5091/attachment//201807/23/15323144287342.jpg",
+    "news_add_time": "1532329709",
+    "chain_add_time": "1532329711",
+    "news_status": "1",
+    "news_index": "0",
+    "news_remark": null,
+    "start_time": "1532313752",
+    "end_time": "2147483647",
+    "news_label": {
+      "label1": null,
+      "label2": {
+        "column_id": "100",
+        "column_name": "网贷",
+        "column_en_name": "news_wd"
+      },
+      "label3": {
+        "column_id": "121",
+        "column_name": "跟投精选",
+        "column_en_name": "news_wd_gtjx"
+      }
+    },
+    "relation_pf_id": "0",
+    "relation_pf_name": null,
+    "click_num": "22",
+    "click_num_total": "37",
+    "author": "互金跟投",
+    "source": "互联网",
+    "publisher": "tangjiarong",
+    "last_change_time": "1532329709",
+    "last_change_user": "tangjiarong",
+    "news_type": "0"
+  }, {
+    "news_id": "7356",
+    "column_id": "122",
+    "news_title": "雷潮即将结束？盘点下最近获得融资的平台 ",
+    "news_title_short": null,
+    "news_intro": "对于备案延期，早在今年4月已经传出风声，唯一未知的是到底会延期多久。但是对于平台而言，平台不断发展，增强自身实力，才能在这场赛跑中成功跑出，强者恒强同样适用在P2P行业。那么除了优化自身资产，提高自身",
+    "seo_key": "融资,获得融资的平台",
+    "seo_desc": "除了优化自身资产，提高自身业务水平之外，还有什么办法可以增强自己的硬实力呢？寻找融资，可能就是最直接的方法之一，平台找到优秀的公司，通过获得融资的方式进行合作。",
+    "news_icon": null,
+    "news_img": "http://183.6.116.151:5091/attachment//201807/12/15313603602934.jpg",
+    "news_add_time": "1531360358",
+    "chain_add_time": "1531360360",
+    "news_status": "1",
+    "news_index": "0",
+    "news_remark": null,
+    "start_time": "1531359641",
+    "end_time": "2147483647",
+    "news_label": {
+      "label1": null,
+      "label2": {
+        "column_id": "100",
+        "column_name": "网贷",
+        "column_en_name": "news_wd"
+      },
+      "label3": {
+        "column_id": "122",
+        "column_name": "专家专栏",
+        "column_en_name": "news_wd_zjzl"
+      }
+    },
+    "relation_pf_id": "0",
+    "relation_pf_name": null,
+    "click_num": "22",
+    "click_num_total": "257",
+    "author": "gt",
+    "source": "互金跟投",
+    "publisher": "liying",
+    "last_change_time": "0",
+    "last_change_user": null,
+    "news_type": "1"
+  }, {
+    "news_id": "7623",
+    "column_id": "121",
+    "news_title": "互金跟投听我说第24期：网贷行业洗牌期投资人需筑信心",
+    "news_title_short": null,
+    "news_intro": "「跟投听我说」，从年初建立到现在，已经来到24期了，在这24期里，我们一直把他作为一个跟大家交流的天地，跟投君也很享受这个栏目。今天也不问什么问题了，跟投君就想和大家谈谈心。最近，行业正经历洗牌期，月",
+    "seo_key": "网贷洗牌,网贷行业洗牌",
+    "seo_desc": "最近，行业正经历洗牌期，月初本以为已经逐渐褪去回归平静，没想到却是进入另一个寒冬。",
+    "news_icon": null,
+    "news_img": "http://183.6.116.151:5091/attachment//201807/16/15317074294343.jpg",
+    "news_add_time": "1531709179",
+    "chain_add_time": "1531709180",
+    "news_status": "1",
+    "news_index": "0",
+    "news_remark": null,
+    "start_time": "1531706677",
+    "end_time": "2147483647",
+    "news_label": {
+      "label1": null,
+      "label2": {
+        "column_id": "100",
+        "column_name": "网贷",
+        "column_en_name": "news_wd"
+      },
+      "label3": {
+        "column_id": "121",
+        "column_name": "跟投精选",
+        "column_en_name": "news_wd_gtjx"
+      }
+    },
+    "relation_pf_id": "0",
+    "relation_pf_name": null,
+    "click_num": "21",
+    "click_num_total": "124",
+    "author": "gt",
+    "source": "互金跟投",
+    "publisher": "liying",
+    "last_change_time": "1531709179",
+    "last_change_user": "liying",
+    "news_type": "1"
+  }],
+  "total": "7494",
+  "column_info": null
+}

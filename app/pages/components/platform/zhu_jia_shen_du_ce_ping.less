@@ -1,0 +1,24 @@
+@import "../../base/base-var.less";
+@import "../../base/base-mixin.less";
+
+
+.platform-common {
+  .import-platform-title();
+  .import-platform-article();
+  .import-platform-no-article();
+  .import-noarticle-btn();
+}
+
+.zjsdcp {
+  .article {
+    position: relative;
+    .p-more{
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      height: 200px;
+      bottom: 0px;
+      background: linear-gradient(#fff0,#ffff);
+    }
+  }
+}

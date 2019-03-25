@@ -1,0 +1,9 @@
+/node_modules
+.DS_Store
+package-lock.json
+/static
+/app/pages/**/*.css
+/app/public/js/*.js
+/logs
+*.wp.js
+.favorites.json

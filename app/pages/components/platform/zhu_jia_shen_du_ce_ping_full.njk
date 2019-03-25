@@ -1,0 +1,15 @@
+{# 平台详情 - 专家深度测评-全文 #}
+<div class="pc-block m-block zjsdcp platform-common">
+  <div class="plate-head clearfix">
+    <h2>专家深度测评</h2>
+    {% if zjsdcp.test_time !=='' and zjsdcp.test_info !== '' %}
+    <span class="more">测评日期:{{ zjsdcp.test_time }}</span>
+    {% endif %}
+  </div>
+  {% if zjsdcp.test_info !=='' %}
+  <div class="title"><span>{{ zjsdcp.test_title }}</span></div>
+  <div class="article text-slice">
+    {{ zjsdcp.test_info | safe }}
+  </div>
+  {% endif %}
+</div>

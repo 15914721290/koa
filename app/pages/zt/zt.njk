@@ -1,0 +1,58 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}P2P网贷专题_互金跟投{% endblock %}
+
+{% block extraCss %}
+  {%- include "./zt.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  <div class="pc-block">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        {% for item in zttj %}
+          <div class="swiper-slide slide-item clearfix">
+            <a href="{{ item.href }}">
+              <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+            </a>
+            <div>
+              <p class="title"><strong><a href="{{ item.href }}">{{ item.title }}</a></strong></p>
+              <p class="intro m-hidden">{{ item.intro }}</p>
+              <p class="m-hidden"><a class="subject" href="{{item.subject.href}}">{{item.subject.inner}}</a> <span class="date">{{ item.date }}</span></p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  {% for item in subjectBlocks %}
+    <div class="zt m-block pc-block">
+      <div class="plate-head clearfix">
+        <h3>{{ item.title }}专题</h3>
+        <a class="more" href="{{ item.more }}">更多{{ item.title }}专题 &gt;</a>
+      </div>
+      <ul class="zt-list zt-list-h clearfix">
+        {% for item in item.subjects %}
+          <li>
+            <a class="item" href="{{ item.href }}" title="{{ item.text }}">
+              <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+              <p class="maxline1">{{ item.text }}</p>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+{% endblock %}
+
+{% block extraBody %}
+  <script src="/js/swiper.2.7.6.min.js?version={{ appVersion }}"></script>
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./zt.in.wp.js" %}
+{% endblock %}

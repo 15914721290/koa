@@ -1,0 +1,231 @@
+@import "../base/base-var.less";
+@import "../base/zt.less";
+@import "../base/selectlist.less";
+@import "../base/alphabet.less";
+@import "../components/platform_tabs/platform_tabs.less";
+@import "../components/filter_platform/filter_platform.less";
+@import "../components/pc_search_bar/pc_search_bar.less";
+@import "../components/rank_3type/rank_3type.less";
+@import "../base/swiper.less";
+
+.bar {
+  border: 1px solid @color-divider;
+  padding: @gap-normal-pc;
+  text-align: center;
+
+  .guide {
+    font-size: 24px;
+  }
+  a {
+    font-size: @font-size-normal;
+    color: @color-main;
+    &:hover {
+      color: white;
+      background: @color-main;
+    }
+  }
+}
+
+.pc-search-bar {
+  border: 1px solid @color-divider;
+  margin: 0 auto;
+  margin-top: @gap-normal-pc;
+  display: inline-block;
+
+  .search-key {
+    @media screen and (max-width: 540px) {
+      width: 90px;
+    }
+    @media screen and (min-width: 540px) {
+      width: 500px;
+    }
+  }
+}
+
+.slide-item {
+  position: relative;
+
+  & > a {
+    float: left;
+    height: 100%;
+
+    @media screen and (max-width: 540px) {
+    }
+    @media screen and (min-width: 540px) {
+      width: 45%;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  & > div {
+    box-sizing: border-box;
+
+    @media screen and (max-width: 540px) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 30;
+      background: @color-mask;
+      padding: @gap-small-pc;
+    }
+    @media screen and (min-width: 540px) {
+      background: @color-divider;
+      float: left;
+      width: 55%;
+      height: 100%;
+      padding: @gap-large-pc;
+    }
+  }
+
+  .title {
+    @media screen and (max-width: 540px) {
+      font-size: @font-size-smaller;
+      max-width: 75%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: white;
+
+      a {
+        color: white;
+      }
+    }
+    @media screen and (min-width: 540px) {
+      font-size: @font-size-largest;
+      font-weight: bold;
+    }
+  }
+
+  .intro {
+    margin: @gap-normal-pc 0;
+    font-size: @font-size-normal;
+    line-height: 1.5;
+  }
+
+  .date {
+    color: @color-subtitle;
+    font-size: @font-size-smaller;
+  }
+}
+
+.recom-showcase {
+  li {
+    @media screen and (max-width: 540px) {
+      padding: @gap-normal-m 0;
+    }
+    @media screen and (min-width: 540px) {
+      width: 50%;
+      float: left;
+      box-sizing: border-box;
+      padding: @gap-normal-pc;
+    }
+  }
+  div:nth-child(1) {
+    float: left;
+    width: 35%;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    @media screen and (max-width: 540px) {
+      height: 38px;
+      line-height: 38px;
+    }
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+  }
+  div:nth-child(2) {
+    float: left;
+    width: 60%;
+    margin-left: 5%;
+    font-size: @font-size-smaller;
+  }
+  p:nth-child(2) {
+    @media screen and (max-width: 540px) {
+      margin-top: @gap-normal-m;
+    }
+    @media screen and (min-width: 540px) {
+      margin-top: @gap-normal-pc;
+    }
+  }
+}
+
+.wdpt {
+  li {
+    display: block;
+    float: left;
+    text-align: center;
+    border: 1px solid @color-divider;
+    box-sizing: border-box;
+    &:hover {
+      border: 1px solid @color-main;
+    }
+
+    @media screen and (max-width: 540px) {
+      width: 48%;
+      margin: @gap-normal-m 0 0 4%;
+      padding: @gap-normal-m 0;
+      &:nth-child(2n + 1) {
+        margin-left: 0;
+      }
+    }
+    @media screen and (min-width: 540px) {
+      width: 22%;
+      margin: @gap-normal-pc 0 0 4%;
+      height: 150px;
+      &:nth-child(4n + 1) {
+        margin-left: 0;
+      }
+    }
+
+    div:nth-child(1) {
+      padding: @gap-small-pc;
+      height: 60px;
+      line-height: 60px;
+    }
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      vertical-align: middle;
+    }
+
+    div:nth-child(2) {
+      font-size: @font-size-normal;
+      margin-bottom: @gap-normal-pc;
+    }
+
+    div:nth-child(3) {
+      font-size: @font-size-smaller;
+      color: @color-subtitle;
+      span {
+        color: @color-main;
+      }
+    }
+  }
+}
+
+.ptxw {
+  li {
+    @media screen and (min-width: 540px) {
+      float: left;
+      width: 50%;
+    }
+  }
+}
+
+.arena {
+  img {
+    width: 100%;
+  }
+  p:nth-child(2) {
+    margin-top: @gap-normal-pc;
+  }
+}

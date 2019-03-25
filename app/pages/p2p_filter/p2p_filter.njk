@@ -1,0 +1,160 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}{{ tkd.title }}{% endblock %}
+{% block keywords %}网贷平台,P2P网贷平台{% endblock %}
+{% block description %}{{ tkd.description }}{% endblock %}
+
+{% block extraHead %}
+  <link rel="canonical" href="{{ pagination.first }}" />
+{% endblock %}
+
+{% block extraCss %}
+  {%- include "./p2p_filter.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  <div class="clearfix">
+    <div class="pc-block-3-2">
+      <div class="m-block">
+        <div class="plate-head clearfix">
+          <h1>P2P网贷平台</h1>
+        </div>
+        <table class="filter">
+          <tbody>
+            {% for item in filterList %}
+              <tr>
+                <td>{{ item.name }}</td>
+                <td><a{% if item.all.isCurrent %} class="current"{% endif %} href="{{ item.all.href }}">全部</a></td>
+                <td class="others">
+                  {% for f in item.filters %}
+                    <a{% if f.isCurrent %} class="current"{% endif %} href="{{ f.href }}">{{ f.name }}</a>
+                  {% endfor %}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      {% if platformList.length > 0 %}
+        <div class="pc-block order clearfix">
+          <a href="{{ orders[0].href }}"{% if orders[0].current %} class="active"{% endif %}>默认排序</a>
+          <a href="{{ orders[1].href }}"{% if orders[1].current %} class="active"{% endif %}>平台排名</a>
+          <a href="{{ orders[2].href }}"{% if orders[2].current %} class="active"{% endif %}>平均年化率</a>
+          <div class="m-hidden">
+            <span>{{ pagination.current }} / {{ pagination.max }}</span>
+            {% if pagination.next %}
+              <a class="next" href="{{ pagination.next }}">&gt;</a>
+            {% endif %}
+          </div>
+        </div>
+
+        {% for item in platformList %}
+          <div class="platform clearfix">
+            <a class="icon" href="{{ item.href +'/' }}"><img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.name }}" /></a>
+            <div class="detail clearfix">
+              <div><a href="{{ item.href + '/' }}"><strong>{{ item.name }}</strong></a></div>
+              <div>最新排名 <span class="sub">第{{ item.rank }}名</span></div>
+              <div>平均年化率 <span class="em">{{ item.rate }}%</span></div>
+              <div>专家评级 <span class="em">{{ item.score }}</span></div>
+              <div>运营状况 <span class="sub">{{ item.state }}</span></div>
+              <div>保障方式 <span class="sub">平台风险保证金</span></div>
+            </div>
+            <div class="subpage m-hidden">
+              <a href="{{ item.href + '/beian/' }}">平台档案</a>
+              <a href="{{ item.href + '/pingji/' }}">平台评测</a>
+              <a href="{{ item.href + '/news/' }}">最新资讯</a>
+            </div>
+          </div>
+        {% endfor %}
+
+        {% include "../components/pagination/pagination.njk" %}
+      {% else %}
+        <div class="empty pc-block">
+          <p>关注【互金跟投】公众号，查看更多</p>
+          <img src="/image/qrcode.png" alt="qrcode" />
+          <p>重新选择筛选条件 或者 <a href="{{ all }}">清除筛选词</a></p>
+        </div>
+
+        <div class="pc-block m-block">
+          <div class="plate-head clearfix">
+            <h2>热门平台</h2>
+          </div>
+
+          {% for item in rmpt %}
+            <div class="platform clearfix">
+              <a class="icon" href="{{ item.href +'/' }}"><img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.name }}" /></a>
+              <div class="detail clearfix">
+                <div><a href="{{ item.href + '/' }}"><strong>{{ item.name }}</strong></a></div>
+                <div>最新排名 <span class="sub">第{{ item.rank }}名</span></div>
+                <div>平均年化率 <span class="em">{{ item.rate }}%</span></div>
+                <div>专家评级 <span class="em">{{ item.score }}</span></div>
+                <div>运营状况 <span class="sub">{{ item.state }}</span></div>
+                <div>保障方式 <span class="sub">平台风险保证金</span></div>
+              </div>
+              <div class="subpage m-hidden">
+                <a href="{{ item.href + '/beian/' }}">平台档案</a>
+                <a href="{{ item.href + '/pingji/' }}">平台评测</a>
+                <a href="{{ item.href + '/news/' }}">最新资讯</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="pc-block-3-1">
+      <div class="arena m-hidden">
+        {% for item in ads.ad3_1 %}
+          {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+            <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+          {% if item.href %}</a>{% endif %}
+        {% endfor %}
+      </div>
+
+      {% include "../components/rank_3type/rank_3type_small.njk" %}
+
+      <div class="m-block pc-block">
+        <div class="plate-head clearfix">
+          <h2>P2P网贷百科</h2>
+        </div>
+        <ul class="link-list">
+          {% for item in baike %}
+            <li><a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="m-block pc-block">
+        <div class="plate-head clearfix">
+          <h2>网贷专题</h2>
+        </div>
+        <ul class="zt-list zt-list-v clearfix">
+          {% for item in zt %}
+            <li>
+              <a href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                <p>{{ item.text }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="arena pc-block m-hidden">
+    {% for item in ads.ad1_2 %}
+      {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+        <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+      {% if item.href %}</a>{% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./p2p_filter.in.wp.js" %}
+{% endblock %}

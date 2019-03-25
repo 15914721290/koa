@@ -1,0 +1,87 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}{{ title }}_互金跟投{% endblock %}
+{% block keywords %}{{ seo_key }}{% endblock %}
+{% block description %}{{ seo_desc }}{% endblock %}
+
+{% block extraCss %}
+  {%- include "./zt_detail.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  <div class="detail">
+    <img onerror="this.src='/image/default.png'" src="{{ bg }}" alt="{{ title }}" />
+    <h1>{{ title }}</h1>
+    <div>{{ intro }}</div>
+  </div>
+
+  <div class="pc-block m-block">
+    <div class="plate-head clearfix">
+      <h2>{{ news.title }}</h2>
+    </div>
+    <div class="news clearfix">
+      {% for item in news.items %}
+        <div>
+          {% if loop.index0 % 2 == 0 %}
+            <a href="{{ item.href }}" title="{{ item.title}}"><img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" /></a>
+            <div>
+              <p><strong><a href="{{ item.href }}">{{ item.title }}</a></strong></p>
+              <p>{{ item.intro }}</p>
+            </div>
+          {% else %}
+            <div>
+              <p><strong><a href="{{ item.href }}">{{ item.title }}</a></strong></p>
+              <p>{{ item.intro }}</p>
+            </div>
+            <a href="{{ item.href }}" title="{{ item.title}}"><img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" /></a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="baike pc-block m-block">
+    <div class="plate-head clearfix">
+      <h2>{{ baike.title }}</h2>
+    </div>
+    <div class="clearfix">
+      <div class="pc-block-2-left pics clearfix">
+        <a href="{{ baike.big.href }}" title="{{ baike.big.text }}">
+          <img onerror="this.src='/image/default.png'" src="{{ baike.big.img }}" alt="{{ baike.big.text }}" />
+          <p>{{ baike.big.text }}</p>
+        </a>
+        {% for item in baike.two %}
+          <a href="{{ item.href }}" title="{{ item.text }}">
+            <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+            <p>{{ item.text }}</p>
+          </a>
+        {% endfor %}
+      </div>
+      <ul class="pc-block-2-right link-list">
+        {% for item in baike.others %}
+          <li><a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  {% if zt %}
+    <div class="pc-block m-block">
+      <div class="plate-head clearfix">
+        <h2>{{ zt.title }}</h2>
+      </div>
+      <ul class="zt-list zt-list-h clearfix">
+      {% for item in zt.items %}
+        <li>
+          <a class="item" href="{{ item.href }}" title="{{ item.text }}">
+            <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+            <p class="maxline1">{{ item.text }}</p>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    </div>
+  {% endif %}
+{% endblock %}

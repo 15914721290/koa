@@ -1,0 +1,9 @@
+{
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.trimAutoWhitespace": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.detectIndentation": false,
+    "eslint.autoFixOnSave": true,
+    "emmet.triggerExpansionOnTab": true
+  }

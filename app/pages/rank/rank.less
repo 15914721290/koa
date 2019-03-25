@@ -1,0 +1,131 @@
+@import "../base/base-var.less";
+@import "../components/pc_hot_search/pc_hot_search.less";
+
+.please {
+  font-weight: bolder;
+  font-size: @font-size-larger;
+  line-height: 2;
+}
+
+.filter {
+  font-size: @font-size-normal;
+  margin-top: @gap-small-pc;
+
+  tr {
+    line-height: 2;
+  }
+
+  span {
+    color: @color-subtitle;
+  }
+
+  a {
+    color: @color-subtitle;
+
+    &:hover {
+      color: white;
+      background: @color-main;
+    }
+  }
+
+  td:nth-child(1){
+    white-space: nowrap;
+    padding-right: @gap-small-pc;
+  }
+
+  .others {
+    a {
+      margin-right: @gap-small-pc;
+      white-space: nowrap;
+    }
+  }
+
+  a.current {
+    color: @color-main;
+    font-weight: bold;
+    &:hover {
+      color: white;
+      background: @color-main;
+    }
+  }
+}
+
+.note {
+  background: @color-divider;
+  font-size: @font-size-normal;
+  padding: @gap-large-pc;
+  line-height: 1.5;
+
+  h1 {
+    font-size: @font-size-larger;
+    font-weight: bold;
+  }
+  span {
+    color: @color-hot;
+  }
+}
+
+.ranks {
+  &>div {
+    float: left;
+    width: 32%;
+    &:nth-child(n + 2) {
+      margin-left: 2%;
+    }
+    h2 {
+      background: @color-main;
+      color: white;
+      font-size: @font-size-normal;
+      font-weight: bold;
+      line-height: 2;
+      padding-left: @gap-small-pc;
+      box-sizing: border-box;
+    }
+    &>div {
+      text-align: center;
+      color: white;
+      background: @color-divider;
+      line-height: 2;
+      font-size: @font-size-normal;
+    }
+  }
+
+  table {
+    width: 100%;
+    text-align: center;
+    border-left: 1px solid @color-divider;
+    border-right: 1px solid @color-divider;
+  }
+}
+
+table.ordered-list tr {
+  font-size: @font-size-normal;
+  line-height: 1.5;
+
+  td:nth-child(1) {
+    text-align: center;
+  }
+
+  td:nth-child(2) {
+    padding: @gap-small-pc 0 0 @gap-small-m;
+  }
+
+  span {
+    font-size: 12px;
+    background: @color-main;
+    color: white;
+    display: inline-block;
+    width: @font-size-normal;
+    height: @font-size-normal;
+    line-height: @font-size-normal;
+    text-align: center;
+    vertical-align: baseline;
+    border-radius: 2px;
+  }
+
+  &:nth-child(n + 4) {
+    span {
+      background: darken(@color-divider, 20%);
+    }
+  }
+}

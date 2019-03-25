@@ -1,0 +1,103 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}{{ detail.name }}官方动态_{{ detail.name }}最新消息_互金跟投{% endblock %}
+{% block keywords %}{{ detail.name }}官方动态,{{ detail.name }}最新消息{% endblock %}
+{% block description %}互金跟投为您提供{{ detail.name }}官方动态，方便您第一时间了解{{ detail.name }}最新消息。{% endblock %}
+
+{% block extraHead %}
+  <link rel="canonical" href="{{ pagination.first }}" />
+{% endblock %}
+
+{% block extraCss %}
+  {%- include "./platform_guanfang.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  {% include "../components/platform_summary2/platform_summary2.njk" %}
+
+  <div class="clearfix">
+    <div class="pc-block-3-2">
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>平台动态</h2>
+        </div>
+        <ul class="news-list">
+          {% for item in ptdt %}
+            <li class="clearfix">
+              <a class="left" href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+              </a>
+              <div class="right">
+                <p><strong><a href="{{ item.href }}">{{ item.title }}</a></strong></p>
+                <p>{{ item.intro }}</p>
+                <div>
+                  {{ item.time }}
+                  {% for label in item.labels %}
+                    <a href="{{ label.href }}">{{ label.inner }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% include "../components/pagination/pagination.njk" %}
+    </div>
+
+    <div class="pc-block-3-1">
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>行业新闻</h3>
+          <a class="more" href="{{ hyxw.more }}">更多新闻 &gt;</a>
+        </div>
+        <ul class="img-link-list clearfix">
+          {% for item in hyxw.items %}
+            <li>
+              <div class="clearfix">
+                <a href="{{ item.href }}"><img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" /></a>
+                <a href="{{ item.href }}">{{ item.text }}</a>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>专题推荐</h3>
+          <a class="more" href="{{ zt.more }}">更多专题 &gt;</a>
+        </div>
+
+        <ul class="zt-list zt-list-v clearfix">
+          {% for item in zt.items %}
+            <li>
+              <a href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                <p>{{ item.text }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% include "../components/rank_3type/rank_3type_small.njk" %}
+    </div>
+  </div>
+
+  {# 弹窗下载 #}
+  {% include "../components/platform_popup/platform_popup.njk" %}
+
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./platform_guanfang.in.wp.js" %}
+{% endblock %}
+
+{% block extraBody %}
+  <script src="/js/jquery.qrcode.min.js?version={{ appVersion }}"></script>
+{% endblock %}

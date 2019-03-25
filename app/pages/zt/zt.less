@@ -1,0 +1,88 @@
+@import "../base/base-var.less";
+@import "../components/pc_hot_search/pc_hot_search.less";
+@import "../base/swiper.less";
+@import "../base/zt.less";
+
+.slide-item {
+  position: relative;
+
+  & > a {
+    float: left;
+    height: 100%;
+
+    @media screen and (max-width: 540px) {
+    }
+    @media screen and (min-width: 540px) {
+      width: 45%;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  & > div {
+    box-sizing: border-box;
+
+    @media screen and (max-width: 540px) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 30;
+      background: @color-mask;
+      padding: @gap-small-pc;
+    }
+    @media screen and (min-width: 540px) {
+      background: @color-divider;
+      float: left;
+      width: 55%;
+      height: 100%;
+      padding: @gap-large-pc;
+    }
+  }
+
+  .title {
+    @media screen and (max-width: 540px) {
+      font-size: @font-size-smaller;
+      max-width: 75%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: white;
+
+      a {
+        color: white;
+      }
+    }
+    @media screen and (min-width: 540px) {
+      font-size: @font-size-largest;
+      font-weight: bold;
+    }
+  }
+
+  .intro {
+    margin: @gap-normal-pc 0;
+    font-size: @font-size-normal;
+    line-height: 1.5;
+  }
+
+  .date {
+    color: @color-subtitle;
+    font-size: @font-size-smaller;
+  }
+
+  .subject {
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: @color-main;
+    border-radius: 30px;
+    color: white;
+    font-size: @font-size-smaller;
+    margin-right: @gap-normal-pc;
+  }
+}

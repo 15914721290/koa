@@ -1,0 +1,23 @@
+@import "./base-var.less";
+
+.alphabet {
+  li {
+    float: left;
+    font-size: @font-size-smaller;
+    padding: 6px;
+    border-radius: 4px;
+    @media screen and (max-width: 540px) {
+      margin-top: @gap-normal-m;
+    }
+    @media screen and (min-width: 540px) {
+      margin-top: @gap-normal-pc;
+    }
+
+  }
+
+  .active, span {
+    padding: 4px;
+    color: white;
+    background: @color-main;
+  }
+}

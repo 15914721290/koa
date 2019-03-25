@@ -1,0 +1,25 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}您访问的页面出错了_互金跟投{% endblock %}
+
+{% block extraCss %}
+  {%- include "./404.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  <div class="error">
+    <p><img src="/image/404.png" /></p>
+    <p>抱歉~您访问的页面不存在或已删除</p>
+    <a href="{{ wwwOrigin + '/' }}">回到互金跟投首页</a>
+  </div>
+{% endblock %}
+
+{% block extraBody %}
+  <script src="/js/swiper.2.7.6.min.js?version={{ appVersion }}"></script>
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./404.in.wp.js" %}
+{% endblock %}

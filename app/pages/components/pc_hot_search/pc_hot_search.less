@@ -1,0 +1,33 @@
+@import "../../base/base-var.less";
+@import "../pc_search_bar/pc_search_bar.less";
+
+.search-bar {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: @color-divider;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 6px;
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+    font-size: @font-size-normal;
+
+    span {
+      color: red;
+      margin-right: @gap-small-pc;
+      font-size: @font-size-larger;
+    }
+    a {
+      margin: 0 @gap-small-pc;
+      color: @color-subtitle;
+      &:hover {
+        color: @color-main;
+      }
+    }
+  }
+}

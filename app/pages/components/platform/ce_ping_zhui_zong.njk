@@ -1,0 +1,16 @@
+{# 平台详情 - 测评追踪 #}
+{% if cpgz.other_source and cpgz.other_source.length !==0 %}
+<div class="pc-block m-block cpzz">
+  <div class="plate-head clearfix">
+    <h2>测评追踪</h2>
+  </div>
+  <div class="article">
+    {% for item in cpgz.other_source %}
+    <div class="row clearfix">
+      <span class="left elli-1"><a href="{{ item.url }}">{{ item.title }}</a></span>
+      <span class="right elli-1">{{ item.source }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

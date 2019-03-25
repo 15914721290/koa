@@ -1,0 +1,96 @@
+{# 平台详情 - 争议信息 黑名单 #}
+{% if zyxx.hasInfo %}
+<div class="pc-block m-block zyxx platform-common">
+  <div class="plate-head clearfix">
+    <h2>{{ zyxx.title }}</h2>
+  </div>
+  <div class="zyxx-content">
+    <div class="article row clearfix">
+      <span class="key">加入时间</span>
+      <span class="value">{{ zyxx.black_time }}</span>
+    </div>
+    {% if zyxx.title =='争议信息' and  zyxx.dispute_info and zyxx.dispute_info!='' %}
+    <div class="article row clearfix">
+      <span class="key">争议原因</span>
+      <span class="value">{{ zyxx.dispute_info | safe }}</span>
+    </div>
+    {% endif %}
+    {% if zyxx.title =='黑名单' and  zyxx.black_reason and zyxx.black_reason!='' %}
+    <div class="article row clearfix">
+      <span class="key">原因</span>
+      <span class="value">{{ zyxx.black_reason | safe }}</span>
+    </div>
+    {% endif %}
+    {% if zyxx.title =='黑名单' and zyxx.black_info and zyxx.black_info!='' %}
+    <div class="article row clearfix">
+      <span class="key">维权信息</span>
+      <span class="value">{{ zyxx.black_info | safe }}</span>
+    </div>
+    {% endif %}
+
+    {% if zyxx.content_url and zyxx.content_url.length != 0 %}
+    {% for item in zyxx.content_url %}
+    {% if item.type == '3' %}
+    <div class="row tuwen2">
+      <div class="clearfix">
+        <div class="right">
+          <p class="common-title cus-title elli-2"><strong><a href="#" class="popup-img">{{ item.title }}</a></strong></p>
+          <div class="more-info clearfix common-widget">
+            <span class="one">{{ item.time }}</span>
+            <span class="two">{{ item.read }} 阅读</span>
+          </div>
+        </div>
+      </div>
+
+      {#
+      <div class="left">
+        <div>
+          <div class="common-title elli-2"><a href="#" class="popup-img">{{ item.title }}</a></div>
+          <div class="more-info clearfix">
+            <span class="one">{{ item.time }}</span>
+            <span class="two">{{ item.read }} 阅读</span>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div>
+          <img src="{{item.image_url}}" alt="互金跟投APP下载，去各大应用商店搜索吧，汇集最专业的大咖，解读网贷最新政策，深度剖析网贷平台，深度剖析网贷平台 点击下载！！！！">
+        </div>
+      </div>
+      #}
+    </div>
+    {% endif %}
+
+    {% if item.type==1 or item.type==2 or item.type==4 %}
+    <div class="row biaowen">
+      <div class="common-title elli-1"><a href="#" class="popup-img"><span>{{ item.title }}</span></a></div>
+      <div class="article elli-3">
+        {{ item.content | safe }}
+      </div>
+      <div class="more-info clearfix">
+        <div class="cell-left">
+          <span class="one">{{ item.time }}</span>
+        </div>
+        {% if item.type!=4 %}
+        <div class="cell-right">
+          <span class="two">{{ item.like }} 点赞</span>
+          <span class="three">{{ item.comment }} 评论</span>
+        </div>
+        {% else %}
+        <div class="cell-right">
+          <span class="three">{{ item.comment }} 人正在讨论</span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+    {% if item.type==888 %}
+    <div class="row biaowen">
+      <div class="common-title elli-1"><a href="#" class="popup-img"><span>{{ item.title }}</span></a></div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  </div>
+</div>
+{% endif %}

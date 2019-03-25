@@ -1,0 +1,37 @@
+@import "./base-var.less";
+
+.category-tabs {
+  @media screen and (max-width: 540px) {
+    margin-top: @gap-normal-m;
+  }
+  @media screen and (min-width: 540px) {
+    margin-top: @gap-small-pc;
+  }
+
+  & > li {
+    font-size: @font-size-smallest;
+    float: left;
+    width: 20%;
+    text-align: center;
+    position: relative;
+    color: @color-subtitle;
+    padding: @gap-small-pc 0;
+    background: @color-divider;
+    border-radius: 0 0 4px 4px;
+  }
+  .active {
+    color: white;
+    background: @color-main;
+  }
+}
+
+.category-showcase {
+  & > div,
+  & > ul {
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }
+}

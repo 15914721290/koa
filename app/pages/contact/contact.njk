@@ -1,0 +1,21 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}联系我们{% endblock %}
+
+{% block extraCss %}
+  {%- include "./contact.css" -%}
+{% endblock %}
+
+{% block content %}
+  <div class="pc-block m-block">
+    <div class="plate-head clearfix">
+      <h2>联系我们</h2>
+    </div>
+
+    <div class="contact">
+      <img src="/image/qrcode.png" />
+      <p>微信扫码关注互金跟投公众号，我们提供平台查询、预警名单、问专家、理财课程等服务。</p>
+      <p>商务合作：yedehua92（微信），请注明合作意图和身份，否则不予通过，请谅解。</p>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,323 @@
+@import "../base/base-var.less";
+@import "../base/category-tabs.less";
+@import "../base/ordered-list.less";
+@import "../components/pc_head/pc_head.less";
+@import "../base/zt.less";
+@import "../components/categories/categories.less";
+@import "../components/breadcrumb/breadcrumb.less";
+@import "../components/ad/gzh.less";
+@import "../base/swiper.less";
+@import "../base/news-list.less";
+
+.arena {
+  img {
+    width: 100%;
+  }
+}
+
+// .follow {
+//   margin: @gap-normal-m @gap-normal-m 0 @gap-normal-m;
+//   background-image: url(/image/follow-bg3.png);
+//   background-size: 100% 100%;
+//   height: 65px;
+//   div:nth-child(1) {
+//     float: left;
+//     width: 70%;
+//     font-size: @font-size-smaller;
+//     line-height: 1.5;
+//     padding: @gap-normal-m 0 0 @gap-normal-m;
+//     box-sizing: border-box;
+//     img {
+//       width: @font-size-smaller;
+//       height: @font-size-smaller;
+//       margin-right: @gap-small-m;
+//     }
+//     span {
+//       font-size: @font-size-normal;
+//       font-weight: bold;
+//     }
+//   }
+//   div:nth-child(2) {
+//     float: right;
+//     max-width: 30%;
+//     height: 60px;
+//     line-height: 60px;
+//     padding: 3px 0;
+//     img {
+//       height: 100%;
+//       width: 100%;
+//     }
+//   }
+// }
+
+// .follow-me {
+//   margin: @gap-normal-m 0;
+//   background-image: url(/image/follow-bg1.png);
+//   background-size: 100% 100%;
+//   position: relative;
+//   height: 232px + @gap-normal-pc * 2px;
+
+//   @media screen and (max-width: 540px) {
+//     height: 164px;
+//   }
+
+//   div {
+//     padding: @gap-normal-pc;
+//     box-sizing: border-box;
+//     float: left;
+//     position: relative;
+//     z-index: 2;
+//     @media screen and (max-width: 540px) {
+//       font-size: 14px;
+//       padding: 12px 0 0 12px;
+//     }
+
+//     p:nth-child(1) {
+//       font-weight: bold;
+//       font-size: 30px;
+//       margin-bottom: @gap-normal-pc;
+//       @media screen and (max-width: 540px) {
+//         font-size: @font-size-normal;
+//         margin-bottom: @gap-normal-m;
+//       }
+//     }
+//     p:nth-child(n + 2) {
+//       height: 50px;
+//       line-height: 50px;
+//       font-size: @font-size-largest;
+//       @media screen and (max-width: 540px) {
+//         font-size: 14px;
+//         height: 30px;
+//         line-height: 30px;
+//         font-size: @font-size-smaller;
+//       }
+//     }
+//     span {
+//       vertical-align: middle;
+//     }
+//     img {
+//       margin-right: @gap-normal-pc;
+//       vertical-align: middle;
+//       width: 46px;
+//       height: 46px;
+//       @media screen and (max-width: 540px) {
+//         margin-right: @gap-small-m;
+//         width: 24px;
+//         height: 24px;
+//       }
+//     }
+//   }
+
+//   & > p {
+//     float: left;
+//     font-size: @font-size-normal;
+//     @media screen and (max-width: 540px) {
+//       font-size: @font-size-smaller;
+//       margin-top: @gap-normal-m;
+//       text-align: center;
+//       width: 100%;
+//     }
+//     @media screen and (min-width: 540px) {
+//       padding-left: @gap-normal-pc;
+//     }
+//   }
+
+//   .fly {
+//     position: absolute;
+//     top: 12px;
+//     right: 12px;
+//     z-index: 1;
+//     @media screen and (max-width: 540px) {
+//       width: 179px;
+//       height: 108px;
+//     }
+//   }
+
+//   .qrcode {
+//     float: right;
+//     margin-right: @gap-normal-pc;
+//     width: 294px;
+//     height: 228px;
+//     margin-top: 12px;
+//     @media screen and (max-width: 540px) {
+//       margin-right: @gap-normal-m;
+//       margin-top: @gap-normal-m;
+//       width: 147px;
+//       height: 114px;
+//     }
+//   }
+// }
+
+.article {
+  box-sizing: border-box;
+  padding: @gap-normal-pc;
+  border: 1px solid @color-divider;
+
+  h1 {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.3;
+
+    @media screen and (max-width: 540px) {
+      font-size: 22px;
+    }
+
+    @media screen and (min-width: 540px) {
+      text-align: center;
+    }
+  }
+
+  .info {
+    color: @color-note;
+    margin-top: @gap-normal-pc;
+    font-size: @font-size-smaller;
+    line-height: 1.3;
+
+    @media screen and (min-width: 540px) {
+      text-align: center;
+    }
+    a {
+      color: @color-note;
+      &:hover {
+        color: @color-main;
+      }
+    }
+  }
+
+  .detail {
+    p {
+      text-indent: 2em;
+      word-wrap: break-word;
+      word-break: break-all;
+      font-size: @font-size-normal;
+      line-height: 1.5;
+      margin: @gap-normal-pc 0;
+      color: @color-subtitle;
+    }
+
+    a {
+      color: @color-main;
+      &:hover {
+        background: @color-main;
+        color: white;
+      }
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100% !important;
+      height: auto !important;
+    }
+  }
+
+  .labels {
+    a {
+      float: left;
+      font-size: @font-size-smallest;
+      color: @color-main;
+      border: 1px solid @color-main;
+      padding: 4px;
+      border-radius: 4px;
+      margin: @gap-small-m;
+      &:hover {
+        background: @color-main;
+        color: white;
+      }
+    }
+  }
+}
+
+.subHead {
+  margin-top: @gap-small-pc;
+}
+
+.news-showcase {
+  .more {
+    background: @color-divider;
+    text-align: center;
+    font-size: @font-size-normal;
+    padding: @gap-normal-m 0;
+    a {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+.slide-item {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  div {
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: @gap-small-pc;
+    font-size: @font-size-smaller;
+    color: white;
+    background: @color-mask;
+  }
+  p {
+    max-width: 75%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.gtfl {
+  @media screen and (max-width: 540px) {
+    margin-bottom: 0px;
+  }
+
+  @media screen and (min-width: 540px) {
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: 16px;
+    font-weight:bold;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 9px;
+  }
+  .remark {
+    font-size:14px;
+    font-weight:500;
+    color:#999;
+  }
+  .gtfl-block {
+    margin-top: 14px;
+  }
+  .gtfl_1 {
+    .title {
+      margin: -4px 0px 9px 0;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  .gtfl_2 {
+    .left {
+      float: left;
+      margin-right: 14px;
+      img{
+        width: 82px;
+        height: 82px;
+      }
+    }
+    .right {
+      display: table-cell;
+      position: relative;
+      top: -4px;
+      padding-top: 3px;
+    }
+  }
+}

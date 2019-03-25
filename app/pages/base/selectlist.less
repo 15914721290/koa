@@ -1,0 +1,56 @@
+@import "./base-var.less";
+
+.select-list {
+  border: 1px solid @color-divider;
+  padding: @gap-small-pc;
+  box-sizing: border-box;
+  position: relative;
+  width: 260px;
+  margin: 0 auto;
+  &:hover {
+    border: 1px solid @color-main;
+  }
+
+  &>div {
+    position: relative;
+    font-size: @font-size-normal;
+
+    &::after {
+      content: "▼";
+      color: @color-normal;
+      font-size: 12px;
+      position: absolute;
+      right: 4px;
+      top: 3px;
+    }
+  }
+
+  .active::after {
+    content: "▲";
+  }
+
+  ul {
+    display: none;
+    position: absolute;
+    z-index: 30;
+    left: -1px;
+    border: 1px solid @color-main;
+    box-sizing: border-box;
+    border-top: none;
+    width: 260px;
+    top: 35px;
+    background: white;
+    li {
+      font-size: @font-size-normal;
+      padding: @gap-small-pc;
+      &:hover {
+        background: @color-main;
+        color: white;
+      }
+    }
+
+    .current {
+      color: @color-main;
+    }
+  }
+}

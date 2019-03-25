@@ -1,0 +1,58 @@
+{# 平台详情 - 投友点评 #}
+<div id="tydp" class="pc-block m-block tydp platform-common">
+  <div class="plate-head clearfix">
+    <h2>投友点评</h2>
+    {% if tydp and tydp.comment_praise %}
+    <a class="more popup-img" href="">好评度 <span class="number">{{ tydp.comment_praise }}</span> &gt;</a>
+    {% endif %}
+  </div>
+  {% if tydp and tydp.list and tydp.list.length!==0 %}
+  <div class="article">
+    <div class="comment">
+      {% for item in tydp.list %}
+      <div class="row clearfix">
+        <div class="left-cell clearfix">
+          <img class="avatar" src="{{ item.user_icon }}" alt="">
+        </div>
+        <div class="right-cell clearfix">
+          <div>
+            <div class="c-head clearfix">
+              <p class="c-name">{{ item.user_name }}</p>
+              <p class="c-sum">
+                <i class="{{item.comment_pf_pop_css}}"></i>
+                {# <img src="/image/user_icon_default.png" alt=""> #}
+                <span>{{ item.comment_pf_pop }}</span>
+              </p>
+            </div>
+            <p class="c-content">{{ item.comment_content }}</p>
+            {% if item.comment_label_info and item.comment_label_info.length!==0 %}
+            <div class="c-tag">
+              {% for text in item.comment_label_info %}
+              <span>{{ text }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+            <p class="c-date">{{ item.comment_add_time }}</p>
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+    <div>
+      <a href="#" class="end-btn popup-img">
+        我要写点评
+      </a>
+    </div>
+  </div>
+  {% else %}
+  <div class="no-article">
+    该平台暂无点评
+  </div>
+  <div>
+    <a href="#" class="noarticle-btn popup-img">
+      我要写点评
+    </a>
+  </div>
+  {% endif %}
+</div>

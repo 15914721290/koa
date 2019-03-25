@@ -1,0 +1,51 @@
+@import "./base-var.less";
+
+.plate-tabs {
+  border-bottom: 2px solid @color-divider;
+
+  @media screen and (max-width: 540px) {
+    margin-top: @gap-normal-m solid @color-divider;
+  }
+
+  & > li {
+    font-size: @font-size-larger;
+    float: left;
+    text-align: center;
+    position: relative;
+    color: @color-subtitle;
+    font-weight: bold;
+    padding: 0 @gap-small-pc;
+    margin-bottom: @gap-small-pc;
+    @media screen and (max-width: 540px) {
+      font-size: @font-size-smaller;
+      padding: 0 4px;  // 4px才能放下5个4字的tab（iphone 5）
+    }
+
+    &:nth-child(n + 2) {
+      border-left: 1px solid @color-dark-divider;
+    }
+  }
+  .active {
+    color: @color-normal;
+    &::after {
+      content: " ";
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: @color-main;
+    }
+  }
+}
+
+.plate-showcase {
+  & > div,
+  & > ul {
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }
+}

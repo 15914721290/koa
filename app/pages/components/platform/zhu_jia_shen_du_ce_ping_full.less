@@ -1,0 +1,31 @@
+@import "../../base/base-var.less";
+@import "../../base/base-mixin.less";
+
+.platform-common {
+  .import-platform-article();
+}
+
+
+.zjsdcp {
+  .title {
+    font-size: @font-size-largest;
+    font-weight: bold;
+    color: @color-title;
+    line-height: 41px;
+    margin: 13px 0 10px 0;
+  }
+  .article {
+    position: relative;
+    .p-more{
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      height: 200px;
+      bottom: 0px;
+      background: linear-gradient(#fff0,#ffff);
+    }
+    img{
+      max-width: 100%;
+    }
+  }
+}

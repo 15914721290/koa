@@ -1,0 +1,33 @@
+{# 平台详情页头部 #}
+
+<div class="summary2-m summary2-pc m-block clearfix">
+  <div class="info1 clearfix">
+    <div class="left">
+      <img  onerror="this.src='/image/default.png'" src="{{summary.img}}" alt="{{ summary.name }}">
+    </div>
+    <div class="middle clearfix">
+      <h1>{{ summary.name }}</h1>
+      <p class="{{ summary.state_css }}">{{ summary.state }}</p>
+    </div>
+    <div class="right">
+      <p ><a href="#" class="follow-platform clearfix popup-img"><i class=""></i> 关注</a></p>
+      <p class="renshu"><span>关注人数 {{summary.guan_zhu_ren_shu}}</span></p>
+    </div>
+  </div>
+  <div class="info2">
+    <ul class="clearfix">
+      <li>
+        <p class="value">{{summary.company_time}}</p>
+        <p class="field">上线时间</p>
+      </li>
+      <li>
+        <p class="value">{{summary.province}}</p>
+        <p class="field">注册地</p>
+      </li>
+      <li>
+        <p class="value"><a href="{{ summary.gongshang_url }}">查看</a></p>
+        <p class="field">工商信息</p>
+      </li>
+    </ul>
+  </div>
+</div>

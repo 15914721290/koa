@@ -1,0 +1,28 @@
+@import "../../base/base-var.less";
+@import "../../base/base-mixin.less";
+
+.platform-common {
+  .import-platform-article();
+  .import-platform-no-article();
+  .import-noarticle-btn();
+}
+
+.xxplzz {
+  .article {
+    .row {
+      font-size: @font-size-normal;
+      font-weight: 500;
+      color: @color-subtitle;
+      margin-top: 18px;
+      .left {
+        float: left;
+        width: 45%;
+      }
+      .right {
+        float: right;
+        width: 45%;
+        text-align: right;
+      }
+    }
+  }
+}

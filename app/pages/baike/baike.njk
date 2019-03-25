@@ -1,0 +1,162 @@
+<div>百科首页</div>{% extends '../base/base.njk' %}
+
+{% block title %}P2P网贷百科_互金跟投{% endblock %}
+{% block keywords %}网贷百科,P2P网贷百科{% endblock %}
+{% block description %}网贷百科为您提供P2P网贷平台、投资理财、保险、银行、信用卡等百科知识，了解更多P2P网贷百科请关注互金跟投。{% endblock %}
+
+{% block extraCss %}
+  {%- include "./baike.css" -%}
+{% endblock %}
+
+{% block content %}
+  <div class="pc-block clearfix">
+    <div class="pc-block-3-2 clearfix">
+      <div class="pc-block-2-left">
+        <div id="main-swiper" class="swiper-container">
+          <div class="swiper-wrapper">
+            {% for item in mainSwiper %}
+              <div class="swiper-slide slide-item">
+                <a title="{{ item.text }}" href="{{ item.href }}">
+                  <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                  <div><p>{{ item.text }}</p></div>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+          <div id="main-pagination" class="swiper-pagination"></div>
+        </div>
+
+        <div class="pc-block m-hidden">
+          <div class="plate-head clearfix">
+            <h2>实用百科</h2>
+          </div>
+          <ul class="link-list">
+            {% for item in hyrd %}
+              <li>
+                <a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="pc-block-2-right m-block top-news">
+        <p><strong><a href="{{ zxzx.top.href }}">{{ zxzx.top.title }}</a></strong></p>
+        <p>{{ zxzx.top.summary }}</p>
+        <ul class="link-list">
+          {% for item in zxzx.items %}
+            <li>
+              <a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="pc-block-3-1 m-hidden">
+      <div class="arena m-hidden">
+        {% for item in ads.ad4_1 %}
+          <p>
+            {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+              <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+            {% if item.href %}</a>{% endif %}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="arena pc-block m-hidden">
+    {% for item in ads.ad2_2 %}
+      {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+        <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+      {% if item.href %}</a>{% endif %}
+    {% endfor %}
+  </div>
+
+  {% for category in categoryBlocks %}
+    {% set rootIndex = loop.index0 %}
+    <div class="category pc-block clearfix">
+      <div class="pc-block-3-2">
+        <div class="head clearfix">
+          <h2><a href="{{ category.more }}">{{ category.name }}</a></h2>
+          <a class="enter" href="{{ category.more }}">进入{{ category.name }}百科 &gt;</a>
+        </div>
+
+        <div class="pc-block-2-left">
+          <div id="swiper{{ loop.index0 }}" class="swiper-container">
+            <div class="swiper-wrapper">
+              {% for item in category.swiper %}
+                <div class="swiper-slide slide-item">
+                  <a title="{{ item.text }}" href="{{ item.href }}">
+                    <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                    <div><p>{{ item.text }}</p></div>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+            <div id="pagination{{ loop.index0 }}" class="swiper-pagination"></div>
+          </div>
+
+          <div class="pc-block m-block">
+            <div class="plate-head clearfix">
+              <h3>热门{{ category.name }}百科</h3>
+              <a class="more" href="{{category.more}}">更多{{ category.name }}百科 &gt;</a>
+            </div>
+            <ul class="link-list ordered-list">
+              {% for item in category.rmxw %}
+                <li>
+                  <span>{{ loop.index }}</span>
+                  <a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <div class="pc-block-2-right m-block">
+          <div class="plate-head clearfix">
+            <h3>精选频道</h3>
+          </div>
+          <ul class="link-list">
+            {% for b in category.mainList %}
+              <li><a href="{{ b.href }}" title="{{ b.inner }}">{{ b.inner }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="pc-block-3-1">
+        <div class="m-block">
+          <div class="plate-head clearfix">
+            <h3>{{ category.name }}资讯</h3>
+          </div>
+          <ul class="link-list">
+            {% for b in category.news %}
+              <li><a href="{{ b.href }}" title="{{ b.inner }}">{{ b.inner }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <ul class="m-block zt-list zt-list-v clearfix">
+          {% for zt in category.zt %}
+            <li>
+              <a class="item" href="{{ zt.href }}" title="{{ zt.text }}">
+                <img onerror="this.src='/image/default.png'" src="{{ zt.img }}" alt="{{ zt.text }}" />
+                <p class="maxline1">{{ zt.text }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endfor %}
+
+{% endblock %}
+
+{% block extraBody %}
+  <script src="/js/swiper.2.7.6.min.js?version={{ appVersion }}"></script>
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./baike.in.wp.js" %}
+{% endblock %}

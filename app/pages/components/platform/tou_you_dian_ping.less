@@ -1,0 +1,97 @@
+@import "../../base/base-var.less";
+@import "../../base/base-mixin.less";
+
+
+.platform-common {
+  .import-platform-no-article();
+  .import-noarticle-btn();
+}
+
+
+.tydp {
+  .number {
+    color: @color-gentou;
+  }
+  .comment {
+    display: table;
+    width: 100%;
+    .row {
+      margin-top: 10px;
+      .left-cell {
+        display: table-cell;
+        .avatar {
+          width: 30px;
+          height: 30px;
+          border-radius: 30px;
+          display: inline-block;
+          margin-right: 17px;
+          vertical-align: 23px;
+        }
+      }
+      .right-cell {
+        display: table-cell;
+        width: 100%;
+        border-bottom: 1px solid @color-divider;
+        .c-head{
+          color: @color-note;
+          font-size: @font-size-normal;
+          margin-top: 9px;
+          .c-name{
+            float: left;
+          }
+          .c-sum{
+            float: right;
+            i{
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+              width: 15px;
+              height: 15px;
+              display: inline-block;
+              margin-right: 3px;
+              position: relative;
+              top: 2px;
+              &.good{
+                background-image: url(/image/comment-sum-good.png);
+              }
+              &.normal{
+                background-image: url(/image/comment-sum-normal.png);
+              }
+              &.bad{
+                background-image: url(/image/comment-sum-bad.png);
+              }
+            }
+            img{
+              width: 14px;
+              height: 14px;
+              display: inline-block;
+              margin-right: 5px;
+            }
+          }
+        }
+        .c-content{
+          margin: 16px 0;
+          color: @color-normal;
+          font-size: @font-size-normal;
+          line-height: @font-size-normal;
+        }
+        .c-tag{
+          span{
+            padding: 3px 5px;
+            background: @color-divider;
+            color: @color-note;
+            font-size: @font-size-smallest - 2;
+            line-height: @font-size-smallest - 2;
+            display: inline-block;
+            margin-right: 8px;
+          }
+        }
+        .c-date{
+          color: @color-note;
+          font-size: @font-size-smaller;
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+
+}

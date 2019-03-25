@@ -1,0 +1,31 @@
+{% if resultCount == 0 %}
+  <div class="none">暂无搜索结果</div>
+  {% include "./recom.njk" %}
+{% else %}
+  <div class="pc-block m-block">
+    <div class="plate-head clearfix">
+      <p class="title">{{ query.key }} <span class="sub">相关百科</span></p>
+    </div>
+    <ul class="news-list">
+      {% for item in baike %}
+        <li class="clearfix">
+          <a class="left" href="{{ item.href }}">
+            <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+          </a>
+          <div class="right">
+            <p><strong><a href="{{ item.href }}">{{ item.title | safe }}</a></strong></p>
+            <p>{{ item.intro | safe }}</p>
+            <div>
+              {{ item.time }}
+              {% for label in item.labels %}
+                <a href="{{ label.href }}">{{ label.inner }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% include "../components/pagination/pagination.njk" %}
+  </div>
+{% endif %}

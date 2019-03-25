@@ -1,0 +1,29 @@
+@import "../base/base-var.less";
+
+.sitemap {
+  font-size: @font-size-normal;
+  line-height: 2;
+
+  div {
+    font-size: @font-size-larger;
+    font-weight: bold;
+  }
+
+  ul>li {
+    display: inline;
+  }
+
+  &>li:nth-child(2) {
+    li {
+      display: block;
+    }
+  }
+  a {
+    white-space: nowrap;
+    margin-right: @gap-small-pc;
+  }
+  span {
+    font-weight: bold;
+    margin-right: @gap-small-pc;
+  }
+}

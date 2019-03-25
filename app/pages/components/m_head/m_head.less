@@ -1,0 +1,65 @@
+@import "../../base/base-var.less";
+
+.m-head {
+  background: @color-main;
+  height: 24px;
+  padding: @gap-small-m @gap-normal-m;
+
+  .brand {
+    float: left;
+    display: block;
+    height: 24px;
+    line-height: 24px;
+
+    img {
+      height: 100%;
+      vertical-align: middle;
+    }
+    span {
+      font-size: @font-size-normal;
+      color: white;
+      vertical-align: middle;
+    }
+  }
+
+  .right {
+    float: right;
+    height: 100%;
+    &>a {
+      padding: 3px;
+      box-sizing: border-box;
+    }
+  }
+
+  .search {
+    background: white;
+    border-radius: 24px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    padding: 2px 8px;
+
+    img {
+      width: 20px;
+      height: 20px;
+      float: left;
+    }
+
+    form {
+      float: left;
+    }
+
+    input {
+      height: 20px;
+      line-height: 20px;
+      padding: 0;
+      width: 100px;
+      font-size: @font-size-smallest;
+    }
+  }
+
+  .more {
+    width: auto;
+    height: 100%;
+  }
+}

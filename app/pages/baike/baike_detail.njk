@@ -1,0 +1,224 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}{{ tkd.title }}{% endblock %}
+{% block keywords %}{{ tkd.keyword }}{% endblock %}
+{% block description %}{{ tkd.description }}{% endblock %}
+
+{% block extraCss %}
+  {%- include "./baike_detail.css" -%}
+{% endblock %}
+
+{% block content %}
+  {#// :ad 顶部（M） ad_head_m #}
+  {% if ads.ad_head_m and ads.ad_head_m.length !== 0 %}
+  <div class="arena pc-hidden ad_head_m">
+    {% for item in ads.ad_head_m %}
+      {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+        <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+      {% if item.href %}</a>{% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {# // :ad 顶部（PC） ad_head_pc #}
+  {% if ads.ad_head_pc and ads.ad_head_pc.length !== 0 %}
+  <div class="arena ad-pc-block m-hidden ad_head_pc">
+    {% for item in ads.ad_head_pc %}
+      {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+        <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+      {% if item.href %}</a>{% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  {# <div class="follow pc-hidden clearfix">
+    <div>
+      <p>帮助20万+投资者避雷的公众号</p>
+      <p><img src="/image/search-click.png" />搜索 <span>互金跟投</span> 关注我们</p>
+    </div>
+    <div>
+      <img src="/image/people.gif" />
+    </div>
+  </div> #}
+
+  <div class="clearfix">
+    <div class="pc-block-3-2">
+      <div class="article">
+        <h1>{{ article.title }}</h1>
+        <p class="info">
+          发布时间： {{article.time }}
+          &nbsp;&nbsp;栏目：<a href="{{ article.channel.href }}">{{ article.channel.name }}</a>
+        </p>
+        <div class="detail">
+          {{ article.content | safe }}
+        </div>
+
+        <div class="labels">
+          {% for item in article.labels %}
+            <a href="{{ item.href }}">{{ item.inner }}</a>
+          {% endfor %}
+        </div>
+      </div>
+
+      {# <div class="follow-me clearfix">
+        <div>
+          <p>为什么关注互金跟投</p>
+          <p><img src="/image/icon1.png" /><span>解读网贷最新政策</span></p>
+          <p><img src="/image/icon2.png" /><span>深度剖析网贷平台</span></p>
+          <p><img src="/image/icon3.png" /><span>实时汇总问题平台</span></p>
+        </div>
+        <img class="fly" src="/image/fly-article.png" />
+        <img class="qrcode" src="/image/qrcode-article.png" alt="qrcode" />
+        <p>扫码/微信搜索 互金跟投（微信ID：hjgentou）</p>
+      </div> #}
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>相关百科</h3>
+        </div>
+        <ul class="news-list">
+          {% for item in xgzx %}
+            <li class="clearfix">
+              <a class="left" href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+              </a>
+              <div class="right">
+                <p><strong><a href="{{ item.href }}">{{ item.title }}</a></strong></p>
+                <p>{{ item.intro }}</p>
+                <div>
+                  {{ item.time }}
+                  {% for label in item.labels %}
+                    <a href="{{ label.href }}">{{ label.inner }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>最新{{ channelName }}百科</h3>
+        </div>
+        <ul class="plate-tabs subHead clearfix">
+          {% for item in zxbk %}
+            <li class="news-tab{% if item.isCurrent %} active{% endif %}">{{ item.title }}</li>
+          {% endfor %}
+        </ul>
+        <div class="plate-showcase clearfix">
+          {% for item in zxbk %}
+            <div class="news-showcase{% if item.isCurrent %} active{% endif %}">
+              <ul class="news-list">
+                {% for item in item.list %}
+                  <li class="clearfix">
+                    <a class="left" href="{{ item.href }}">
+                      <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+                    </a>
+                    <div class="right">
+                      <p><strong><a href="{{ item.href }}">{{ item.title }}</a></strong></p>
+                      <p>{{ item.intro }}</p>
+                      <div>
+                        {{ item.time }}
+                        {% for label in item.labels %}
+                          <a href="{{ label.href }}">{{ label.inner }}</a>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+              <div class="more"><a href="{{ item.more }}">查看更多</a></div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+   <div class="pc-block-3-1">
+      <div class="m-block">
+        <div class="plate-head clearfix">
+          <h2>今日头条</h2>
+        </div>
+        <ul class="img-link-list">
+          <li>
+            <div class="clearfix">
+              <a href="{{ jrtt.top.href }}"><img onerror="this.src='/image/default.png'" src="{{ jrtt.top.img }}" alt="{{ jrtt.top.text }}" /></a>
+              <a href="{{ jrtt.top.href }}">{{ jrtt.top.text }}</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="link-list">
+          {% for item in jrtt.others %}
+            <li><a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block arena m-hidden">
+        {% for item in ads.ad2_3 %}
+          {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+            <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+          {% if item.href %}</a>{% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>{{ channel }}资讯</h2>
+        </div>
+        <ul class="link-list">
+          {% for item in news %}
+            <li><a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block arena m-hidden">
+        {% for item in ads.ad2_4 %}
+          {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+            <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+          {% if item.href %}</a>{% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>专题推荐</h2>
+          <a class="more" href="{{ zt.more }}">更多专题 &gt;</a>
+        </div>
+        <ul class="zt-list zt-list-v clearfix">
+          {% for item in zt.items %}
+            <li>
+              <a href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                <p>{{ item.text }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>热门资讯</h2>
+          <a class="more" href="{{ zxph.more }}">更多资讯 &gt;</a>
+        </div>
+        <ul class="link-list ordered-list">
+          {% for item in zxph.items %}
+            <li>
+              <span>{{ loop.index }}</span>
+              <a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./baike_detail.in.wp.js" %}
+{% endblock %}

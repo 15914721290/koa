@@ -1,0 +1,11 @@
+<div class="search-bar m-hidden clearfix">
+  <div class="left">
+    {% include "../pc_search_bar/pc_search_bar.njk" %}
+  </div>
+  <div class="right">
+    <span>热搜</span>
+    {% for item in hotSearch %}
+      <a href="{{ item.href }}">{{ item.inner }}</a>
+    {% endfor %}
+  </div>
+</div>

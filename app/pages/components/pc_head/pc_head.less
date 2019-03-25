@@ -1,0 +1,120 @@
+@import "../../base/base-var.less";
+
+.pc-head {
+  min-width: 1000px;
+  height: 40px;
+  line-height: 40px;
+  background: black;
+  color: white;
+
+  .container {
+    min-width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .left {
+    float: left;
+    margin-left: @gap-normal-pc;
+    font-size: @font-size-smaller;
+  }
+  .right {
+    float: right;
+    margin-right: @gap-normal-pc;
+    font-size: @font-size-smaller;
+  }
+
+  .nav {
+    li {
+      float: left;
+      margin-right: @gap-normal-pc;
+    }
+    a {
+      color: white;
+      &:hover {
+        color: @color-main;
+      }
+    }
+  }
+
+  .qrcode {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: @gap-normal-pc;
+    &:hover {
+      overflow: visible;
+      color: @color-main;
+    }
+    div {
+      position: absolute;
+      left: -35px;
+      z-index: 40;
+      padding: @gap-small-pc;
+      text-align: center;
+      background: white;
+      border: 1px solid @color-main;
+    }
+    p {
+      font-size: @font-size-smaller;
+      color: @color-normal;
+      line-height: 1.5;
+    }
+    img {
+      display: block;
+      width: 128px;
+      height: 128px;
+    }
+  }
+
+  .fast-nav {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    font-size: @font-size-smaller;
+    &:hover {
+      overflow: visible;
+      color: @color-main;
+    }
+  }
+
+  .fast-nav-panel {
+    position: absolute;
+    right: -20px;
+    width: 1007px;  // 1024屏宽，再减去IE的滚动条，得到1007是内容宽度
+    line-height: 2;
+    z-index: 40;
+    padding: @gap-normal-pc;
+    box-sizing: border-box;
+    background: white;
+    border: 1px solid @color-main;
+    color: @color-normal;
+
+    & > li {
+      float: left;
+      div {
+        font-weight: bold;
+        font-size: @font-size-normal;
+      }
+    }
+
+    .column {
+      li {
+        width: 120px;
+      }
+    }
+
+    .pc-head-platforms {
+      width: 240px;
+      li {
+        float: left;
+      }
+    }
+  }
+
+  .pc-head-news a {
+    margin-right: @gap-normal-pc;
+  }
+}

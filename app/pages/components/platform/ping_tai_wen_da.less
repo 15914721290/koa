@@ -1,0 +1,42 @@
+@import "../../base/base-var.less";
+@import "../../base/base-mixin.less";
+
+
+.platform-common {
+  .import-platform-title();
+  .import-platform-article();
+  .import-platform-no-article();
+  .import-noarticle-btn();
+  .import-pf-no-article();
+}
+
+
+.ptwd {
+  .article {
+    .more-info {
+      width: 100%;
+      margin-top: 6px;
+      span {
+        font-size: @font-size-smaller;
+        color: @color-note;
+        display: inline-block;
+      }
+      .cell-left {
+        float: left;
+      }
+      .cell-right {
+        float: right;
+        .three{
+          min-width: 50px;
+          text-align: right;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+  .article-content{
+    p,div{
+      overflow: hidden;
+    }
+  }
+}

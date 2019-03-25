@@ -1,0 +1,20 @@
+{# 热门平台、风投平台等4个tab #}
+<div class="platform-tabs">
+  <ul class="plate-tabs clearfix">
+    {% for item in platformTabs %}
+      <li class="platform-tab{% if loop.first %} active{% endif %}">{{ item.title }}</li>
+    {% endfor %}
+  </ul>
+  <div class="plate-showcase clearfix">
+    {% for item in platformTabs %}
+      <div class="platform-showcase{% if loop.first %} active{% endif %}">
+        {% for platform in item.platforms %}
+          <div>
+            <p><a href="{{ platform.url }}">{{ platform.name }}</a></p>
+            <p>综合利率 <span>{{ platform.rate }}</span></p>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

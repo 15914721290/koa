@@ -1,0 +1,237 @@
+@import "./base-var.less";
+@import "./reset.less";
+@import "./plate-tabs.less";
+@import "../components/main_nav/main_nav.less";
+@import "../components/pc_head/pc_head.less";
+@import "../components/m_head/m_head.less";
+@import "../components/yqlj/yqlj.less";
+@import "../components/footer/footer.less";
+
+html {
+  font-size: 62.5% !important;
+  // 字体设置参考sina.cn
+  font-family: "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB",
+    sans-serif;
+}
+
+a {
+  color: @color-normal;
+  text-decoration: none;
+
+  &:hover {
+    color: @color-main;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  -moz-appearance: none;
+  caret-color: @color-main;
+  &::-webkit-input-placeholder {
+    color: @color-subtitle;
+  }
+}
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.maxline1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 2px; // 不加的话，字体的ascent和descen部分会缺失。浏览器默认会有的，被reset.css搞掉了
+  padding-bottom: 2px;
+}
+
+ul.link-list li {
+  .maxline1;
+  margin-top: @gap-normal-pc;
+  font-size: @font-size-normal;
+  color: @color-subtitle;
+  @media screen and (max-width: 540px) {
+    margin-top: @gap-normal-m;
+  }
+  a {
+    color: @color-subtitle;
+    &:hover {
+      color: @color-main;
+    }
+  }
+}
+
+ul.img-link-list div {
+  margin-top: @gap-normal-pc;
+  @media screen and (max-width: 540px) {
+    margin-top: @gap-normal-m;
+  }
+
+  a:nth-child(1) {
+    width: 30%;
+    float: left;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  a:nth-child(2) {
+    box-sizing: border-box;
+    padding-left: @gap-small-pc;
+    width: 70%;
+    float: left;
+    font-size: @font-size-normal;
+    line-height: 1.5;
+    color: @color-subtitle;
+    &:hover {
+      color: @color-main;
+    }
+  }
+}
+
+.end-btn {
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  background: @color-divider;
+  text-align: center;
+  font-size: @font-size-normal;
+  color: @color-subtitle;
+  font-weight: 500;
+  margin-top: 23px;
+  display: block;
+}
+
+
+.plate-head {
+  border-bottom: 2px solid @color-divider;
+  padding-bottom: @gap-middle-pc;
+
+  h1,
+  h2,
+  h3,
+  .title {
+    color: @color-title;
+    float: left;
+    font-size: @font-size-larger;
+    font-weight: bold;
+    border-left: 4px solid @color-main;
+    padding-left: @gap-small-pc;
+  }
+
+  .more {
+    float: right;
+    line-height: 18px;
+    height: 18px;
+    font-size: @font-size-smaller;
+    color: @color-note;
+  }
+  a.more:hover {
+    color: @color-main;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  body {
+    min-width: 320px;
+  }
+
+  .m-hidden {
+    display: none;
+  }
+
+  .m-block {
+    padding: @gap-large-m @gap-normal-m @gap-normal-m @gap-normal-m;
+    border-top: solid @gap-normal-m @color-divider;
+  }
+
+  .ad-m-block {
+    padding-top: @gap-normal-m;
+    padding-bottom: @gap-normal-m;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .pc-hidden {
+    display: none;
+  }
+
+  .pc-block {
+    margin-top: @gap-large-less-pc;
+  }
+
+  .ad-pc-block {
+    margin-top: @gap-large-less-pc;
+  }
+
+  .pc-block-3-2 {
+    width: 67%;
+    float: left;
+  }
+
+  .pc-block-3-1 {
+    width: 30%;
+    margin-left: 3%;
+    float: right;
+  }
+
+  .pc-block-2-left {
+    width: 48%;
+    float: left;
+  }
+
+  .pc-block-2-right {
+    width: 48%;
+    margin-left: 4%;
+    float: right;
+  }
+}
+
+.content {
+  @media screen and (min-width: 540px) {
+    min-width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.elli{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.elli-1{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+.elli-2{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.elli-3{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}

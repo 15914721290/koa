@@ -1,0 +1,117 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}【{{ detail.name }}新闻】 {{ detail.name }}最新消息,公司新闻,官方动态_互金跟投{% endblock %}
+{% block keywords %}{{ detail.name }}新闻,{{ detail.name }}最新消息,{{ detail.name }}公司新闻,{{ detail.name }}官方动态{% endblock %}
+{% block description %}互金跟投{{ detail.name }}新闻栏目，定期更新{{ detail.name }}公司新闻和官方动态，方便您深入了解{{ detail.name }}最新消息。{% endblock %}
+
+{% block extraHead %}
+  <link rel="canonical" href="{{ pagination.first }}" />
+{% endblock %}
+
+{% block extraCss %}
+  {%- include "./platform_news.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  <div class="summary m-block clearfix">
+    <div class="icon">
+      <img onerror="this.src='/image/default.png'" src="{{detail.img}}" alt="{{ detail.name }}" />
+    </div>
+    <div class="info1">
+      <h1>{{ detail.name }}</h1>
+      <p>收益率 <a href="{{ detail.rebateHref }}">{{ detail.rebate }}%</a></p>
+      <p>运营状态 <a href="{{ detail.stateHref }}">{{ detail.state }}</a></p>
+    </div>
+    <div class="info2">
+      <p>专家评级 <a href="{{ detail.scoreHref }}">{{ detail.score }}</a></p>
+      <p><a href="{{ detail.moreHref }}">查看更多评级排行 &gt;&gt;</a></p>
+    </div>
+  </div>
+
+  <ul class="subpages clearfix">
+    <li><a href="{{ baseUrl + '/' }}">首页</a></li>
+    <li><a href="{{ baseUrl + '/beian/' }}">档案</a></li>
+    <li><a href="{{ baseUrl + '/pingji/' }}">评测</a></li>
+    <li><a href="{{ baseUrl + '/guanfang/' }}">平台动态</a></li>
+    <li class="current"><a href="{{ baseUrl + '/news/' }}">新闻</a></li>
+  </ul>
+
+  <div class="clearfix">
+    <div class="pc-block-3-2">
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>平台新闻</h2>
+        </div>
+        <ul class="news-list">
+          {% for item in news %}
+            <li class="clearfix">
+              <a class="left" href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+              </a>
+              <div class="right">
+                <p><strong><a href="{{ item.href }}">{{ item.title }}</a></strong></p>
+                <p>{{ item.intro }}</p>
+                <div>
+                  {{ item.time }}
+                  {% for label in item.labels %}
+                    <a href="{{ label.href }}">{{ label.inner }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% include "../components/pagination/pagination.njk" %}
+    </div>
+
+    <div class="pc-block-3-1">
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>行业新闻</h3>
+          <a class="more" href="{{ hyxw.more }}">更多新闻 &gt;</a>
+        </div>
+        <ul class="img-link-list clearfix">
+          {% for item in hyxw.items %}
+            <li>
+              <div class="clearfix">
+                <a href="{{ item.href }}"><img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" /></a>
+                <a href="{{ item.href }}">{{ item.text }}</a>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>专题推荐</h3>
+          <a class="more" href="{{ zt.more }}">更多专题 &gt;</a>
+        </div>
+
+        <ul class="zt-list zt-list-v clearfix">
+          {% for item in zt.items %}
+            <li>
+              <a href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                <p>{{ item.text }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% include "../components/rank_3type/rank_3type_small.njk" %}
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./platform_news.in.wp.js" %}
+{% endblock %}

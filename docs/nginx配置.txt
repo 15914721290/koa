@@ -1,0 +1,43 @@
+server {
+        listen       3008 default_server;
+        server_name  www.54hjgt.com 54hjgt.com;
+
+        location ~ ^/(css|js|image|baidu_verify) {
+           root /Users/liuhx/Desktop/frontend/51hjgt/app/public/;
+        }
+
+        location ~ ^/.*(ico|xml|txt)$ {
+           root /Users/liuhx/Desktop/frontend/51hjgt/app/public/;
+        }
+
+        location /internal {
+          return 403;
+        }
+
+        location / {
+          proxy_pass http://127.0.0.1:8123;
+          proxy_set_header Host $host:$server_port;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto  $scheme;
+          proxy_redirect default;
+        }
+    }
+
+    server {
+        listen       3008;
+        server_name  ~(?<second>.*)\.54hjgt.com;
+        location / {
+          rewrite (.*) /internal/$second$1 break;
+          proxy_pass http://127.0.0.1:8123;
+          proxy_set_header Host $host:$server_port;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto  $scheme;
+          proxy_redirect default;
+        }
+
+        location ~ /(css|js|image|favicon\.ico) {
+          root /Users/liuhx/Desktop/frontend/51hjgt/app/public/;
+        }
+    }

@@ -1,0 +1,23 @@
+@import "./base-var.less";
+
+ul.ordered-list li {
+  span {
+    font-size: 12px;
+    background: @color-main;
+    color: white;
+    display: inline-block;
+    width: @font-size-normal;
+    height: @font-size-normal;
+    line-height: @font-size-normal;
+    text-align: center;
+    vertical-align: top;
+    margin-right: @gap-normal-m;
+    border-radius: 2px;
+  }
+
+  &:nth-child(n + 4) {
+    span {
+      background: darken(@color-divider, 20%);
+    }
+  }
+}

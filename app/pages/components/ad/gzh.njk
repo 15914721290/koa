@@ -1,0 +1,28 @@
+<input id="_copyinpu">
+{% if ad_gzh.des === 'm' %}
+<div class="ad_gzh pc-hidden clearfix">
+  <div class="right">
+    <p class="p-img"><img onerror="this.src='/image/default.png'" src="{{ ad_gzh.imgSrc }}"></p>
+    <p class="p-btn"><a href="#" data-copy="{{ ad_gzh.copyText }}">{{ ad_gzh.btnText }}</a></p>
+  </div>
+  <div class="left">
+    <p class="first"><span>①</span>{{ ad_gzh.words[0] }}</p>
+    <p><span>②</span>{{ ad_gzh.words[1] }}</p>
+    <p><span>③</span>{{ ad_gzh.words[2] }}</p>
+    <p class="last">{{ ad_gzh.words[3] }}</p>
+  </div>
+</div>
+{% elif ad_gzh.des === 'pc' %}
+<div class="ad_gzh m-hidden clearfix">
+    <div class="right">
+      <p class="p-img"><img onerror="this.src='/image/default.png'" src="{{ ad_gzh.imgSrc }}"></p>
+      <!-- <p class="p-btn"><a href="#" data-copy="{{ ad_gzh.copyText }}">{{ ad_gzh.btnText }}</a></p> -->
+    </div>
+    <div class="left">
+      <p class="first"><span>①</span>{{ ad_gzh.words[0] }}</p>
+      <p><span>②</span>{{ ad_gzh.words[1] }}</p>
+      <p><span>③</span>{{ ad_gzh.words[2] }}</p>
+      <p class="last">{{ ad_gzh.words[3] }}</p>
+    </div>
+  </div>
+{% endif %}

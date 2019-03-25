@@ -1,0 +1,10 @@
+<div class="breadcrumb">
+  <a href="{{ wwwOrigin + '/' }}">首页</a> &gt;
+  {% for item in breadcrumb -%}
+    {%- if loop.last -%}
+      <span>{{ item.inner }}</span>
+    {%- else -%}
+      <a href="{{ item.href }}">{{ item.inner }}</a> &gt;
+    {% endif %}
+  {% endfor %}
+</div>

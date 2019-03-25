@@ -1,0 +1,28 @@
+@import "../base/base-var.less";
+@import "../components/pc_hot_search/pc_hot_search.less";
+
+.error {
+  text-align: center;
+  p:nth-child(1) {
+    margin-top: @gap-normal-pc;
+  }
+  img {
+    max-width: 80%;
+    height: 160px;
+  }
+  p:nth-child(2) {
+    font-size: @font-size-normal;
+    line-height: 2;
+  }
+
+  a {
+    display: block;
+    width: 160px;
+    border-radius: 10px;
+    padding: @gap-normal-m;
+    background: @color-main;
+    font-size: @font-size-normal;
+    margin: @gap-normal-m auto;
+    color: white;
+  }
+}

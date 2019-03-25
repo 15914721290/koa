@@ -1,0 +1,69 @@
+@import "../../base/base-var.less";
+.gtyx {
+  span {
+    display: inline-block;
+  }
+  .first-row {
+    margin-top: 32px;
+    .title {
+      margin-right: 12px;
+      font-size: 18px;
+      color: @color-title;
+      font-weight: 500; // line-height:38px;
+    }
+    .tag {
+      margin-right: 12px;
+      font-size: @font-size-smaller;
+      color: white;
+      font-weight: 500;
+      height: 24px;
+      line-height: 24px;
+      background: @color-gentou;
+      border-radius: 3px;
+      padding: 1px 4px;
+    }
+  }
+  .number-row {
+    margin-top: 15px;
+    .left {
+      float: left;
+      width: 68%;
+      color: @color-gentou;
+      font-size: 37px;
+      font-weight: bold;
+      .symb {
+        font-size: 22px;
+      }
+      .plus {
+        font-size: 33px;
+        vertical-align: middle;
+      }
+    }
+    .right {
+      float: right;
+      width: 27%;
+      text-align: right;
+      color: @color-title;
+      font-size: 37px;
+      font-weight: bold;
+      .danwei {
+        font-size: 20px;
+      }
+    }
+  }
+  .last-row {
+    font-size: 16px;
+    font-weight: 500;
+    color: @color-note;
+    margin-top: 7px;
+    .left {
+      float: left;
+      width: 68%;
+    }
+    .right {
+      float: right;
+      width: 27%;
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import "../base/base-var.less";
+@import "../base/base-mixin.less";
+@import "./platform_common.less";
+@import "../base/news-list.less";
+@import "../components/ad/follow.less";
+@import "../components/ad/adPlatform.less";
+@import "../components/platform/zheng_yi_xin_xi/zheng_yi_xin_xi.less";
+@import "../components/platform/zhu_jia_jian_ping.less";
+@import "../components/platform/zhu_jia_shen_du_ce_ping.less";
+@import "../components/platform/ce_ping_zhui_zong.less";
+@import "../components/platform/xin_xi_pi_lu_zhui_zong.less";
+@import "../components/platform/ping_tai_yu_lun_zhui_zong.less";
+// @import "../components/platform/gen_tou_you_xuan.less";
+@import "../components/platform/ping_tai_wen_da.less";
+@import "../components/platform/tou_you_dian_ping.less";
+@import "../components/platform/navigation/index.less";
+
+
+.pingce {
+  word-wrap: break-word;
+  font-size: @font-size-normal;
+  line-height: 2;
+  padding-top: 18px;
+}
+
+.dangan {
+  table {
+    font-size: @font-size-smaller;
+    line-height: 2;
+    td:nth-child(1) {
+      text-align: center;
+      width: 130px;
+    }
+  }
+}
+
+.recom {
+  li {
+    text-align: center;
+    padding: @gap-small-pc;
+    box-sizing: border-box;
+    float: left;
+
+    font-size: @font-size-smaller;
+    line-height: 2;
+    @media screen and (max-width: 540px) {
+      width: 50%;
+    }
+    @media screen and (min-width: 540px) {
+      width: 20%;
+    }
+  }
+  div {
+    height: 30px;
+    line-height: 30px;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+  }
+  .rebate {
+    color: @color-main;
+  }
+}
+
+
+

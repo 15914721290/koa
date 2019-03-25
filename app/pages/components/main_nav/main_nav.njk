@@ -1,0 +1,20 @@
+{# 主导航栏，顶栏之下的导航 #}
+<div class="main-nav clearfix">
+  <a class="home m-hidden" href="{{ wwwOrigin + '/' }}">
+    <img src="/image/logo_pc.png" alt="P2P网贷平台" />
+  </a>
+  <span class="title m-hidden">
+    {%- if mainNavTitle -%}
+      {{ mainNavTitle }}
+    {%- else -%}
+      互金跟投
+    {%- endif -%}
+  </span>
+  <ul class="menu clearfix">
+    {% for item in mainNav %}
+      <li class="item">
+        <a{% if item.current %} class="current"{% endif %} href="{{ item.href }}">{{ item.inner }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

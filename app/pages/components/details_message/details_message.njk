@@ -1,0 +1,30 @@
+{% macro render(name,data) %}
+
+<style>
+
+</style>
+
+<div class="details-message">
+  <div class="details-message-head">
+    <h3>{{name}}</h3>
+  </div>
+  <div class="details-message-body">
+    <ul>
+      {% for item in data.list %}
+      {% if loop.index0<6 %}
+      <li>
+        <span class="icon"></span>
+        <span class="link">
+          <a href="{{item._url}}">{{item.news_title}}</a>
+        </span>
+        <span class="time">{{item.format_time}}</span>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+
+  </div>
+
+</div>
+
+{% endmacro %}

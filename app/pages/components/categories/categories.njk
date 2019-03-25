@@ -1,0 +1,14 @@
+{# 资讯子分类栏 #}
+<div class="category-block clearfix">
+  <img class="pc-hidden" src="/image/category_icon.png" alt="category" />
+  <ul class="categories clearfix">
+    {% for item in categories %}
+      <li{% if item.current %} class=" active"{% endif %}>
+        <a href="{{ item.href }}">{{ item.inner }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="search m-hidden">
+    {% include "../pc_search_bar/pc_search_bar.njk" %}
+  </div>
+</div>

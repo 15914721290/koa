@@ -1,0 +1,32 @@
+{#
+  a.分页组件，只有＞1页，才出现
+  b.首页、末页 始终显示，上一页、下一页 除第1页，最后1页，不显示外，其他页面都显示；
+  c.分页组件在第1页时，URL为默认链接，不出现页码为1的URL（参照URL&TKD规则）
+首页、末页、上一页、下一页，不管什么条件，只要出现，都可以点
+  d.当前页的页码不可点
+#}
+{% if pagination.show %}
+<div class="pagination">
+  <a href="{{ pagination.first }}">首页</a>
+  {% if pagination.previous %}
+    <a href="{{ pagination.previous }}">上一页</a>
+  {% endif %}
+  {%- for item in pagination.nums -%}
+    {%- if item.isCurrent -%}
+      <span class="current" href="{{ item.href }}">{{ item.inner }}</span>
+    {%- else -%}
+      <a class="m-hidden" href="{{ item.href }}">{{ item.inner }}</a>
+    {%- endif -%}
+  {%- endfor -%}
+  {% if pagination.next %}
+    <a href="{{ pagination.next }}">下一页</a>
+  {% endif %}
+  <a href="{{ pagination.last }}">末页</a>
+  <select class="m-hidden" first="{{ pagination.first }}">
+    {%- for i in range(1, pagination.max + 1) -%}
+      <option{% if i == pagination.current %} selected="selected"{% endif %}>{{ i }}</option>
+    {%- endfor -%}
+  </select>
+  <span>共{{ pagination.max }}页<span class="m-hidden">{{pagination.total}}条</span></span>
+</div>
+{% endif %}

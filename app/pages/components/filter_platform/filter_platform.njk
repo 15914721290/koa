@@ -1,0 +1,25 @@
+<div class="filter-platform">
+  <div class="plate-head head clearfix">
+    <p class="title">查找平台</p>
+    <div class="more">正常运营<span>{{ platformCount }}</span>家P2P平台</div>
+  </div>
+  <div class="filter">
+    <div class="filter-score select-list">
+      <div class="score-selected" data-value="0">按平台评级</div>
+      <ul class="score-list">
+        {% for item in filterPlatform.score %}
+          <li class="score-item" data-value="{{ loop.index }}">{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="filter-percent select-list">
+      <div class="percent-selected" data-value="0">按收益</div>
+      <ul class="percent-list">
+        {% for item in filterPlatform.percent %}
+          <li class="percent-item" data-value="{{ loop.index }}">{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <button class="filter-go" type="button">找平台</button>
+  </div>
+</div>

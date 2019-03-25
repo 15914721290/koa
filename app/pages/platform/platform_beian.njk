@@ -1,0 +1,195 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}{{ detail.name }}平台工商备案信息_互金跟投{% endblock %}
+{% block keywords %}{{ detail.name }}平台档案提供{{ detail.name }}平台工商/备案信息，供您在{{ detail.name }}投资理财时参考使用{% endblock %}
+{% block description %}互金跟投整理了最新的{{ detail.name }}工商备案信息，为您在{{ detail.name }}投资理财时提供参考。{% endblock %}
+
+{% block extraCss %}
+  {%- include "./platform_beian.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  {% include "../components/platform_summary2/platform_summary2.njk" %}
+
+  <div class="clearfix">
+    <div class="pc-block-3-2">
+      <div class="pc-block m-block dangan clearfix">
+        <div class="plate-head clearfix">
+          <h2>平台档案</h2>
+        </div>
+        <div class="clearfix">
+          <table class="pc-block-2-left">
+            <tbody>
+              <tr>
+                <td>公司名称</td>
+                <td>{{ detail.companyName }}</td>
+              </tr>
+              <tr>
+                <td>统一社会信用代码</td>
+                <td>{{ detail.code }}</td>
+              </tr>
+              <tr>
+                <td>组织机构代码</td>
+                <td>{{ detail.orgNum }}</td>
+              </tr>
+              <tr>
+                <td>法定代表人</td>
+                <td>{{ detail.captain }}</td>
+              </tr>
+              <tr>
+                <td>公司类型</td>
+                <td>{{ detail.type }}</td>
+              </tr>
+              <tr>
+                <td>营业期限</td>
+                <td>{{ detail.businessTime }}</td>
+              </tr>
+              <tr>
+                <td>核准日期</td>
+                <td>{{ detail.checkTime }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="pc-block-2-right">
+            <tbody>
+              <tr>
+                <td>电话</td>
+                <td>{{ detail.phone }}</td>
+              </tr>
+              <tr>
+                <td>工商注册号</td>
+                <td>{{ detail.companyNum }}</td>
+              </tr>
+              <tr>
+                <td>经营状态</td>
+                <td>{{ detail.state2 }}</td>
+              </tr>
+              <tr>
+                <td>注册资本</td>
+                <td>{{ detail.capital }}</td>
+              </tr>
+              <tr>
+                <td>成立日期</td>
+                <td>{{ detail.time }}</td>
+              </tr>
+              <tr>
+                <td>登记机关</td>
+                <td>{{ detail.authority }}</td>
+              </tr>
+              <tr>
+                <td>所属行业</td>
+                <td>{{ detail.industry }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td>曾用名</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>企业地址</td>
+              <td>{{ detail.address }}</td>
+            </tr>
+            <tr>
+              <td>经营范围</td>
+              <td>{{ detail.businessField }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>{{ detail.name }}备案信息</p>
+        <div class="clearfix">
+          <table class="pc-block-2-left">
+            <tbody>
+              <tr>
+                <td>备案域名</td>
+                <td>{{ detail.domain }}</td>
+              </tr>
+              <tr>
+                <td>备案域名时间</td>
+                <td>{{ detail.domain_time }}</td>
+              </tr>
+              <tr>
+                <td>备案单位性质</td>
+                <td>{{ detail.xz }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="pc-block-2-right">
+            <tbody>
+              <tr>
+                <td>统一社会信用代码</td>
+                <td>{{ detail.code }}</td>
+              </tr>
+              <tr>
+                <td>ICP备案号</td>
+                <td>{{ detail.icp }}</td>
+              </tr>
+              <tr>
+                <td>ICP经营许可证</td>
+                <td>{{ detail.icp_num }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc-block-3-1">
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>行业新闻</h3>
+          <a class="more" href="{{ hyxw.more }}">更多新闻 &gt;</a>
+        </div>
+        <ul class="img-link-list clearfix">
+          {% for item in hyxw.items %}
+            <li>
+              <div class="clearfix">
+                <a href="{{ item.href }}"><img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" /></a>
+                <a href="{{ item.href }}">{{ item.text }}</a>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>专题推荐</h3>
+          <a class="more" href="{{ zt.more }}">更多专题 &gt;</a>
+        </div>
+
+        <ul class="zt-list zt-list-v clearfix">
+          {% for item in zt.items %}
+            <li>
+              <a href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                <p>{{ item.text }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% include "../components/rank_3type/rank_3type_small.njk" %}
+    </div>
+  </div>
+
+  {% include "../components/platform_popup/platform_popup.njk" %}
+
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./platform_beian.in.wp.js" %}
+{% endblock %}
+
+{% block extraBody %}
+  <script src="/js/jquery.qrcode.min.js?version={{ appVersion }}"></script>
+{% endblock %}

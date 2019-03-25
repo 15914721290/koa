@@ -1,0 +1,56 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}网站地图_互金跟投{% endblock %}
+
+{% block extraCss %}
+  {%- include "./sitemap.css" -%}
+{% endblock %}
+
+{% block content %}
+  <div class="pc-block m-block">
+    <div class="plate-head clearfix">
+      <h2>网站地图</h2>
+    </div>
+
+    <ul class="sitemap">
+      <li>
+        <div>资讯</div>
+        <ul>
+          {% for item in news %}
+            <li><a href="{{ item.href }}">{{ item.inner }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <div>网贷平台</div>
+        <ul>
+          {% for item in filterList %}
+            <li>
+              <span>{{ item.name }}</span>
+              {% for filter in item.filters %}
+                <a href="{{ filter.href }}">{{ filter.name }}</a>
+              {% endfor %}
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <div>百科</div>
+        <ul>
+          {% for item in baike %}
+            <li><a href="{{ item.href }}">{{ item.inner }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <div>专题</div>
+        <ul>
+          {% for item in zt %}
+            <li><a href="{{ item.href }}">{{ item.inner }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+{% endblock %}

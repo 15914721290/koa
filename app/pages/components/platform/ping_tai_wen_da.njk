@@ -1,0 +1,33 @@
+{# 平台详情 - 平台问答 #}
+<div id="ptwd" class="pc-block m-block ptwd platform-common">
+  <div class="plate-head clearfix">
+    <h2>平台问答</h2>
+    <a class="more popup-img" href="#">查看更多&gt;</a>
+  </div>
+  {% if ptwd.list and ptwd.list.length!==0 %}
+  <div class="article">
+    {% for item in ptwd.list %}
+    <div class="title elli-1"><span>{{ item.post_title }}</span></div>
+    <div class="elli-2 article-content">
+      {{ item.post_content | safe }}
+    </div>
+    <div class="more-info clearfix">
+      <div class="cell-left">
+        <span class="one">{{item.post_online_time}}</span>
+      </div>
+      <div class="cell-right">
+        <span class="two">{{item.post_like_num}}点赞</span>
+        <span class="three">{{item.post_comment_num}}评论</span>
+      </div>
+    </div>
+    {% endfor %}
+    <div>
+      <a href="#" class="end-btn popup-img">
+        我要提问
+      </a>
+    </div>
+  </div>
+  {% else %}
+  <div class="pf-no-article">该平台暂无问答，你可以<a href="#" class="popup-img"><span class="kankan">去社区看看</span></a></div>
+  {% endif %}
+</div>

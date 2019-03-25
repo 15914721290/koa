@@ -1,0 +1,108 @@
+@import "../../../base/base-var.less";
+@import "../../../base/base-mixin.less";
+.platform-common {
+  .import-platform-title();
+  .import-platform-article();
+}
+
+.import-common-title();
+.import-common-widget();
+
+
+.zyxx {
+  .zyxx-content {
+    .row {
+      border-bottom: 1px solid @color-divider;
+      padding: 12px 0;
+      span {
+        display: inline-block;
+      }
+      .key {
+        float: left;
+        @media screen and (max-width: 330px) {
+          width: 64px;
+        }
+        @media screen and  (min-width: 330px) and  (max-width: 540px) {
+          width: 68px;
+        }
+        @media screen and (min-width: 540px) {
+          width: 68px;
+        }
+      }
+      .value {
+        float: left;
+        text-align: left;
+        margin-left: 48px;
+        @media screen and (max-width: 330px) {
+          width: 61%;
+        }
+        @media screen and (min-width: 330px) and (max-width: 350px) {
+          width: 61%;
+        }
+        @media screen and (min-width: 350px) and (max-width: 400px) {
+          width: 63%;
+        }
+        @media screen and (min-width: 400px) and (max-width: 450px) {
+          width: 65%;
+        }
+        @media screen and (min-width: 450px) and (max-width: 550px) {
+          width: 68%;
+        }
+        @media screen and (min-width: 540px) {
+          width: 68%;
+        }
+      }
+    }
+    .row:last-of-type {
+      border-bottom: unset;
+    }
+    .tuwen2 {
+      @media screen and (max-width: 540px) {
+        padding: @gap-normal-m 0;
+      }
+      .right {
+        float: left;
+        width: 100%;
+        position: relative;
+        .cus-title{
+          position: relative;
+          top: -15px;
+        }
+        .more-info {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+
+          .one{
+            float: left;
+          }
+          .two{
+            float: right;
+          }
+        }
+      }
+    }
+    .biaowen {
+      .more-info {
+        width: 100%;
+        margin-top: 13px;
+        span {
+          font-size: @font-size-smaller;
+          color: @color-note;
+          display: inline-block;
+        }
+        .cell-left {
+          float: left;
+        }
+        .cell-right {
+          float: right;
+          .three {
+            min-width: 50px;
+            text-align: right;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+}

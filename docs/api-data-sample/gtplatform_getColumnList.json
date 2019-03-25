@@ -1,0 +1,145 @@
+{
+  "score": {
+    "type": "score",
+    "name": "专家评级",
+    "list": [{
+      "column_id": "重仓",
+      "column_name": "重仓"
+    }, {
+      "column_id": "中仓",
+      "column_name": "中仓"
+    }, {
+      "column_id": "轻仓",
+      "column_name": "轻仓"
+    }, {
+      "column_id": "观望",
+      "column_name": "观望"
+    }]
+  },
+  "percent": {
+    "type": "percent",
+    "name": "平均收益",
+    "list": [{
+      "column_id": "21",
+      "column_name": "低于8%"
+    }, {
+      "column_id": "5",
+      "column_name": "8%~11%"
+    }, {
+      "column_id": "6",
+      "column_name": "11%~14%"
+    }, {
+      "column_id": "7",
+      "column_name": "14%~16%"
+    }, {
+      "column_id": "8",
+      "column_name": "16%以上"
+    }]
+  },
+  "context": {
+    "type": "context",
+    "name": "平台背景",
+    "list": [{
+      "column_id": "9",
+      "column_name": "国资背景"
+    }, {
+      "column_id": "10",
+      "column_name": "上市系"
+    }, {
+      "column_id": "11",
+      "column_name": "风投系"
+    }, {
+      "column_id": "12",
+      "column_name": "民营系"
+    }]
+  },
+  "rebate_term": {
+    "type": "rebate_term",
+    "name": "投资期限",
+    "list": [{
+      "column_id": "36",
+      "column_name": "天标"
+    }, {
+      "column_id": "37",
+      "column_name": "1月-3月"
+    }, {
+      "column_id": "38",
+      "column_name": "4月-6月"
+    }, {
+      "column_id": "39",
+      "column_name": "7月-12月"
+    }, {
+      "column_id": "40",
+      "column_name": "12月以上"
+    }]
+  },
+  "model": {
+    "type": "model",
+    "name": "保障模式",
+    "list": [{
+      "column_id": "22",
+      "column_name": "风险准备金"
+    }, {
+      "column_id": "23",
+      "column_name": "小贷公司"
+    }, {
+      "column_id": "24",
+      "column_name": "融资性担保公司"
+    }, {
+      "column_id": "25",
+      "column_name": "非融资性担保公司"
+    }, {
+      "column_id": "26",
+      "column_name": "平台自有资金"
+    }, {
+      "column_id": "27",
+      "column_name": "其他"
+    }]
+  },
+  "province": {
+    "type": "province",
+    "name": "所在地区",
+    "list": [{
+      "column_id": "广东省",
+      "column_name": "广东省"
+    }, {
+      "column_id": "北京市",
+      "column_name": "北京市"
+    }, {
+      "column_id": "浙江省",
+      "column_name": "浙江省"
+    }, {
+      "column_id": "上海市",
+      "column_name": "上海市"
+    }, {
+      "column_id": "山东省",
+      "column_name": "山东省"
+    }, {
+      "column_id": "四川省",
+      "column_name": "四川省"
+    }, {
+      "column_id": "江苏省",
+      "column_name": "江苏省"
+    }, {
+      "column_id": "湖北省",
+      "column_name": "湖北省"
+    }]
+  },
+  "op_status": {
+    "type": "op_status",
+    "name": "运营状况",
+    "list": [{
+      "column_id": 1,
+      "column_type": "op_status",
+      "column_name": "正常运营"
+    }, {
+      "column_id": 2,
+      "column_type": "op_status",
+      "column_name": "停业或转型"
+    }, {
+      "column_id": 3,
+      "column_type": "op_status",
+      "column_name": "问题平台"
+    }]
+  }
+}

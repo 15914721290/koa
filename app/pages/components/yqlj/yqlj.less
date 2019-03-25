@@ -1,0 +1,17 @@
+@import "../../base/base-var.less";
+
+.bottom-tabs {
+  @media screen and (max-width: 540px) {
+    padding: @gap-normal-m;
+    border-top: @gap-normal-m solid @color-divider;
+  }
+  @media screen and (min-width: 540px) {
+    margin-top: @gap-large-pc;
+  }
+
+  a {
+    float: left;
+    margin: @gap-small-pc;
+    font-size: @font-size-smaller;
+  }
+}

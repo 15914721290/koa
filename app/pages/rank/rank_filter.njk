@@ -1,0 +1,74 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}{{ filterResult }}P2P网贷平台排名_互金跟投{% endblock %}
+{% block keywords %}网贷平台排名,P2P网贷平台排名{% endblock %}
+{% block description %}{{ filterResult }}P2P网贷平台排名是用以反映网贷平台用户关注度的榜单，是根据用户在互金跟投网站的多种行为，综合多项数据进行分析得出的排名趋势。{% endblock %}
+
+{% block extraHead %}
+  <link rel="canonical" href="{{ pagination.first }}" />
+{% endblock %}
+
+{% block extraCss %}
+  {%- include "./rank_filter.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  <div class="m-block">
+    <table class="filter">
+      <tbody>
+        {% for item in filterList %}
+          <tr>
+            <td>{{ item.name }}</td>
+            <td class="others">
+              {% for f in item.filters %}
+                <a{% if f.isCurrent %} class="current"{% endif %} href="{{ f.href }}">{{ f.name }}</a>
+              {% endfor %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note pc-block">
+    <h1><span>{{ filterResult }}</span>P2P网贷平台排名</h1>
+    <p>互金跟投P2P网贷平台排行榜是用以反映平台在过去30天内的用户关注度的榜单。我们根据用户在互金跟投网站的多种行为，综合多项数据进行分析得出排名，在某种程度上反映出近阶段P2P网贷平台的变化趋势。</p>
+  </div>
+
+  {% if platforms.length > 0 %}
+    <ul class="platforms">
+      {% for item in platforms %}
+        <li class="clearfix">
+          <span>{{ item.rank }}</span>
+          <div><a href="{{ item.href + '/' }}" title="{{ item.name }}"><img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.name }}" /></a></div>
+          <div>
+            <p>平台名称：<a href="{{ item.href + '/' }}"><strong>{{ item.name }}</strong></a></p>
+            <p>
+              官方资料：
+              <a href="{{ item.href + '/beian/' }}">档案</a>
+              <a href="{{ item.href + '/pingji/' }}">评测</a>
+              <a href="{{ item.href + '/news/' }}">新闻</a>
+            </p>
+            <p>参考收益：<a href="{{ item.rebateHref }}">{{ item.rebate }}%</a></p>
+            <p>运营状态：<a href="{{ item.stateHref }}">{{ item.state }}</a></p>
+          </div>
+          <div>
+            <p>专家评级<a href="{{ item.scoreHref }}">{{ item.score }}</a></p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="empty">没有结果，请选择其它条件</div>
+  {% endif %}
+
+  {% include "../components/pagination/pagination.njk" %}
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./rank_filter.in.wp.js" %}
+{% endblock %}

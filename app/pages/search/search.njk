@@ -1,0 +1,47 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}{{ tkd.title }}{% endblock %}
+
+{% block extraCss %}
+  {%- include "./search.css" -%}
+{% endblock %}
+
+{% block content %}
+  <div class="bar pc-block">
+    <div class="guide">
+      <img src="/image/logo_text.png" alt="P2P网贷平台" />
+    </div>
+    {% include "../components/pc_search_bar/pc_search_bar.njk" %}
+  </div>
+
+  {% if noKey == false %}
+    <div class="type-tabs clearfix">
+      <a {% if query.type == 'all' %} class="current"{% endif %} href="{{ tabBaseUrl + 'all' }}">综合</a>
+      <a {% if query.type == 'platform' %} class="current"{% endif %} href="{{ tabBaseUrl + 'platform' }}">平台</a>
+      <a {% if query.type == 'news' %} class="current"{% endif %} href="{{ tabBaseUrl + 'news' }}">资讯</a>
+      <a {% if query.type == 'wiki' %} class="current"{% endif %} href="{{ tabBaseUrl + 'wiki' }}">百科</a>
+      <span class="m-hidden">共找到 {{ resultCount }} 条结果</span>
+    </div>
+  {% endif %}
+
+  {% if noKey %}
+    <div class="hot-search pc-block">
+      <p>热搜</p>
+      {% for item in hotSearch %}
+        <a href="{{ item.href }}">{{ item.inner }}</a>
+      {% endfor %}
+    </div>
+  {% elif query.type == 'all' %}
+    {% include "./search_all.njk" %}
+  {% elif query.type == 'platform' %}
+    {% include "./search_platform.njk" %}
+  {% elif query.type == 'news' %}
+    {% include "./search_news.njk" %}
+  {% elif query.type == 'wiki' %}
+    {% include "./search_baike.njk" %}
+  {% endif %}
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./search.in.wp.js" %}
+{% endblock %}

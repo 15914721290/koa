@@ -1,0 +1,161 @@
+@import "../base/base-var.less";
+@import "../base/zt.less";
+@import "../components/breadcrumb/breadcrumb.less";
+
+.detail {
+  text-align: center;
+  position: relative;
+  color: white;
+
+  @media screen and (max-width: 540px) {
+    padding: @gap-normal-m;
+  }
+  @media screen and (min-width: 540px) {
+    height: 400px;
+    padding: @gap-large-pc;
+  }
+
+  img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  h1 {
+    @media screen and (max-width: 540px) {
+      max-width: 100%;
+      font-size: @font-size-normal;
+      margin: 0 auto;
+    }
+    @media screen and (min-width: 540px) {
+      width: 1000px;
+      font-size: @font-size-largest * 2;
+      margin: @gap-large-pc*2 auto;
+    }
+  }
+
+  div {
+    line-height: 1.5;
+    background: @color-mask;
+    @media screen and (max-width: 540px) {
+      font-size: @font-size-smaller;
+      padding: @gap-small-m;
+      margin: @gap-normal-m 0;
+    }
+    @media screen and (min-width: 540px) {
+      margin: 0 auto;
+      width: 300px;
+      font-size: @font-size-normal;
+      padding: @gap-large-pc;
+    }
+  }
+}
+
+.news > div {
+  float: left;
+  color: white;
+  @media screen and (max-width: 540px) {
+    width: 50%;
+  }
+  @media screen and (min-width: 540px) {
+    width: 25%;
+  }
+
+  & > div {
+    background: lighten(@color-main, 20%);
+    box-sizing: border-box;
+    line-height: 1.5;
+    @media screen and (max-width: 540px) {
+      padding: @gap-normal-m;
+      height: 100px;
+      p:nth-child(2) {
+        display: none;
+      }
+    }
+    @media screen and (min-width: 540px) {
+      height: 200px;
+      padding: @gap-normal-pc;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    @media screen and (max-width: 540px) {
+      height: 100px;
+    }
+  }
+
+  p:nth-child(1) {
+    font-size: @font-size-normal;
+    a {
+      color: white;
+      &:hover {
+        color: @color-main;
+      }
+    }
+  }
+  p:nth-child(2) {
+    margin-top: @gap-normal-pc;
+    font-size: @font-size-smaller;
+  }
+}
+
+.baike {
+  .two a {
+    float: left;
+    width: 50%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .pics {
+    a {
+      position: relative;
+      display: block;
+
+      &:hover p {
+        color: @color-main;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      p {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        z-index: 1;
+        color: white;
+        background: @color-mask;
+        text-align: center;
+        font-size: @font-size-normal;
+        padding: 4px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    a:nth-child(1) {
+      margin: @gap-small-pc 0;
+    }
+    a:nth-child(2) {
+      float: left;
+      width: 49%;
+    }
+    a:nth-child(3) {
+      float: left;
+      width: 49%;
+      margin-left: 2%;
+    }
+  }
+}

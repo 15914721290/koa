@@ -1,0 +1,39 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}{{ categoryName }}_互金跟投{% endblock %}
+
+{% block extraHead %}
+  <link rel="canonical" href="{{ pagination.first }}" />
+{% endblock %}
+
+{% block extraCss %}
+  {%- include "./zt_topic.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  <div class="zt m-block">
+    <div class="plate-head clearfix">
+      <h2>{{ categoryName }}</h2>
+    </div>
+    <ul class="zt-list zt-list-h clearfix">
+      {% for item in topics %}
+        <li>
+          <a class="item" href="{{ item.href }}" title="{{ item.text }}">
+            <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+            <p class="maxline1">{{ item.text }}</p>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% include "../components/pagination/pagination.njk" %}
+  </div>
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./zt_topic.in.wp.js" %}
+{% endblock %}

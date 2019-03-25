@@ -1,0 +1,67 @@
+<div class="pc-head m-hidden clearfix">
+  <div class="container">
+    <div class="left">
+      {%- if pcHeadNav -%}
+        <ul class="nav">
+          {% for item in pcHeadNav %}
+            <li><a href="{{ item.href }}">{{ item.inner }}</a></li>
+          {% endfor %}
+        </ul>
+      {%- else -%}
+        欢迎来到互金跟投
+      {%- endif -%}
+    </div>
+    <div class="right">
+      <span class="qrcode">
+        微信公众号
+        <div>
+          <img src="/image/qrcode.png" alt="qrcode" />
+          <p>扫一扫</p>
+          <p>关注微信公众号</p>
+        </div>
+      </span>
+      <span class="fast-nav">
+        快速导航
+        <ul class="fast-nav-panel clearfix">
+          <li>
+            <div>热门平台</div>
+            <ul class="column clearfix pc-head-platforms">
+              {% for item in pcHead.platforms %}
+                <li><a href="{{ item.href }}">{{ item.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <div>专题</div>
+            <ul class="column clearfix">
+              {% for item in pcHead.zt %}
+                <li><a href="{{ item.href }}">{{ item.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <div>百科</div>
+            <ul class="column clearfix">
+              {% for item in pcHead.baike %}
+                <li><a href="{{ item.href }}">{{ item.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <div>资讯</div>
+            <ul class="clearfix pc-head-news">
+              {% for item in pcHead.news %}
+                <li>
+                  <a href="{{ item.href }}">{{ item.name }}</a>
+                  {% for s in item.subs %}
+                    <a href="{{ s.href }}">{{ s.name }}</a>
+                  {% endfor %}
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </span>
+    </div>
+  </div>
+</div>

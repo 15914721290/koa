@@ -1,0 +1,22 @@
+{#// :ad adPlatform #}
+{% if item.des == 'm' %}
+<div class="m-block pc-hidden ad_detail_nir ad_detail_m">
+{% elif item.des == 'pc' %}
+<div class="pc-block m-hidden ad_detail_nir ad_detail_pc">
+{% endif %}
+  <div class="name elli-2">
+    {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+      <p>{{ item.content_name }}</p>
+    {% if item.href %}</a>{% endif %}
+  </div>
+  <div>
+    {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+      <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+    {% if item.href %}</a>{% endif %}
+  </div>
+  <div class="remark elli-2">
+    {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+      <p>{{ item.content_remark }}</p>
+    {% if item.href %}</a>{% endif %}
+  </div>
+</div>

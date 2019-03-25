@@ -1,0 +1,26 @@
+@import "../../base/base-var.less";
+
+.platform-tabs {
+  border-bottom: solid 2px @color-divider;
+  padding-bottom: @gap-normal-pc;
+
+  .platform-showcase > div {
+    float: left;
+    width: 16.66%;
+    text-align: center;
+    margin-top: @gap-normal-pc;
+
+    p:nth-child(1) {
+      font-size: @font-size-normal;
+    }
+
+    p:nth-child(2) {
+      font-size: @font-size-smallest;
+      color: @color-subtitle;
+      margin-top: @gap-small-pc;
+    }
+    span {
+      color: @color-main;
+    }
+  }
+}

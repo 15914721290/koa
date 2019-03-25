@@ -1,0 +1,19 @@
+{# 友情链接、网贷平台、网贷百科、热门关注4个tab #}
+<div class="bottom-tabs">
+  <ul class="plate-tabs clearfix">
+    {% for item in yqlj %}
+      <li class="bottom-tab{% if loop.first %} active{% endif %}">{{ item.title }}</li>
+    {% endfor %}
+  </ul>
+  <div class="plate-showcase clearfix">
+    {% for item in yqlj %}
+      <div class="bottom-showcase{% if loop.first %} active{% endif %}">
+        {% for child in item.children %}
+          <a href="{{ child.href }}">
+            {{ child.inner }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

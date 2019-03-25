@@ -1,0 +1,48 @@
+<div class="pc-block m-block rank3 clearfix">
+  <div class="plate-head clearfix">
+    <h2 class="block-title">平台排行榜</h2>
+  </div>
+  <div class="clearfix">
+    <div class="dimension">
+      <h3>专家评级</h3>
+      <table>
+        <tbody>
+          {% for item in rank3.zjpj %}
+            <tr>
+              <td><span>{{ loop.index }}</span></td>
+              <td><a href="{{ item.href }}">{{ item.name }}</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dimension">
+      <h3>热门搜索</h3>
+      <table>
+        <tbody>
+          {% for item in rank3.rmss %}
+            <tr>
+              <td><span>{{ loop.index }}</span></td>
+              <td><a href="{{ item.href }}">{{ item.name }}</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dimension">
+      <h3>人气指数</h3>
+      <table>
+        <tbody>
+          {% for item in rank3.rqzs %}
+            <tr>
+              <td><span>{{ loop.index }}</span></td>
+              <td><a href="{{ item.href }}">{{ item.name }}</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

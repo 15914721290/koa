@@ -1,0 +1,201 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}P2P网贷平台排名_网络借贷平台档案_互金跟投{% endblock %}
+{% block keywords %}网贷平台,网络借贷平台,网贷平台排名,P2P网贷平台,P2P网贷平台排名,P2P网贷平台档案{% endblock %}
+{% block description %}互金P2P网贷平台频道汇集了国内各大网络借贷平台信息，包括网贷平台档案、专家评测等。了解网贷平台新闻，查看网贷平台口碑，就上互金跟投网贷平台。{% endblock %}
+
+{% block extraCss %}
+  {%- include "./p2p.css" -%}
+{% endblock %}
+
+{% block content %}
+  <div class="bar pc-block">
+    <div class="guide">
+      快速搜索平台
+      <a href="{{ advance }}">高级筛选</a>
+    </div>
+    {% include "../components/pc_search_bar/pc_search_bar.njk" %}
+  </div>
+
+  <div class="pc-block clearfix m-hidden">
+    <div class="pc-block-3-2">
+      {% include "../components/platform_tabs/platform_tabs.njk" %}
+    </div>
+    <div class="pc-block-3-1">
+      {% include "../components/filter_platform/filter_platform.njk" %}
+    </div>
+  </div>
+
+  <div class="clearfix">
+    <div class="pc-block-3-2 pc-block">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          {% for item in swiper %}
+            <div class="swiper-slide slide-item clearfix">
+              <a href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+              </a>
+              <div>
+                <p class="title"><a href="{{ item.href }}">{{ item.title }}</a></p>
+                <p class="intro m-hidden">{{ item.intro }}</p>
+                <p class="date m-hidden">{{ item.time }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      {# 专家推荐平台 #}
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix m-hidden">
+          <h2>{{ recom.title }}</h2>
+          <a href="{{ recom.more }}" class="more">更多推荐平台 &gt;</a>
+        </div>
+        <div class="pc-block">
+          <ul class="plate-tabs clearfix">
+            {% for item in recom.tabs %}
+              <li class="recom-tab{% if loop.first %} active{% endif %}">{{ item.name }}</li>
+            {% endfor %}
+          </ul>
+          <div class="plate-showcase clearfix">
+            {% for item in recom.tabs %}
+              <ul class="recom-showcase clearfix{% if loop.first %} active{% endif %}">
+                {% for line in item.items %}
+                  <li>
+                    <a class="clearfix" href="{{ line.href }}">
+                      <div>
+                        <img onerror="this.src='/image/default.png'" src="{{ line.img }}" alt="icon" />
+                      </div>
+                      <div>
+                        <p>特色：{{ line.name }}</p>
+                        <p>专家评级：{{ line.intro }}</p>
+                      </div>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>平台新闻</h2>
+        </div>
+        <ul class="ptxw clearfix link-list">
+          {% for item in news %}
+            <li class="maxLine1">
+              <a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% include "../components/rank_3type/rank_3type.njk" %}
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>网贷平台</h2>
+        </div>
+        <ul class="alphabet clearfix m-hidden">
+          <li><a class="active" href="{{ wwwOrigin + '/p2p-dh/' }}">热门</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=0-9' }}">0-9</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=A' }}">A</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=B' }}">B</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=C' }}">C</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=D' }}">D</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=E' }}">E</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=F' }}">F</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=G' }}">G</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=H' }}">H</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=I' }}">I</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=J' }}">J</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=K' }}">K</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=L' }}">L</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=M' }}">M</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=N' }}">N</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=O' }}">O</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=P' }}">P</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=Q' }}">Q</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=R' }}">R</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=S' }}">S</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=T' }}">T</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=U' }}">U</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=V' }}">V</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=W' }}">W</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=X' }}">X</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=Y' }}">Y</a></li>
+          <li><a href="{{ wwwOrigin + '/p2p-dh/?letter=Z' }}">Z</a></li>
+        </ul>
+        <ul class="wdpt clearfix">
+          {% for item in recommend %}
+            <li>
+              <a href="{{ item.url }}">
+                <div class="m-hidden">
+                  <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.name }}" />
+                </div>
+                <div>{{ item.name }}</div>
+                <div>预期年化 <span>{{ item.rate }}%</span></div>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="pc-block-3-1">
+      <div class="pc-block m-hidden arena clearfix">
+        {% for item in pc2 %}
+          <p>
+            <a href="{{ item.href }}" title="{{ item.title }}">
+              <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+            </a>
+          </p>
+        {% endfor %}
+      </div>
+      <div class="m-block pc-block">
+        <div class="plate-head clearfix">
+          <h2>网贷百科</h2>
+        </div>
+        <ul class="link-list">
+          {% for item in baike %}
+            <li><a href="{{ item.href }}" title="{{ item.inner }}">{{ item.inner }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="m-block pc-block">
+        <div class="plate-head clearfix">
+          <h2>网贷专题</h2>
+        </div>
+        <ul class="zt-list zt-list-v clearfix">
+          {% for item in zt %}
+            <li>
+              <a href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                <p>{{ item.text }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="arena pc-block m-hidden">
+    {% for item in ads.ad1_5 %}
+      {% if item.href %}<a href="{{ item.href }}"{% if item.external %} rel="nofollow"{% endif %}>{% endif %}
+        <img onerror="this.src='/image/default.png'" src="{{ item.img }}" />
+      {% if item.href %}</a>{% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block extraBody %}
+  <script src="/js/swiper.2.7.6.min.js?version={{ appVersion }}"></script>
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./p2p.in.wp.js" %}
+{% endblock %}

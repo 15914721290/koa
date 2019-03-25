@@ -1,0 +1,13 @@
+<div class="pc-search-bar clearfix">
+  <div class="search-type-list">
+    <div class="search-type">{{ searchBarSearchTypeText if searchBarSearchTypeText else '综合' }}</div>
+    <ul class="search-list">
+      <li class="search-item" data-value="all">综合</li>
+      <li class="search-item" data-value="platform">平台</li>
+      <li class="search-item" data-value="news">资讯</li>
+      <li class="search-item" data-value="wiki">百科</li>
+    </ul>
+  </div>
+  <input class="search-key" type="text" placeholder="请输入关键词" value="{{ pcSearchBarValue }}" />
+  <button class="search-now" type="button" data-value="{{ searchBarSearchType if searchBarSearchType else 'all' }}">搜索</button>
+</div>

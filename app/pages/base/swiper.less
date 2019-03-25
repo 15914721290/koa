@@ -1,0 +1,35 @@
+@import "./base-var.less";
+@import "./swiper.2.7.6.less";
+
+.swiper-container {
+  position: relative;
+  height: 240px;
+
+  @media screen and (max-width: 540px) {
+    height: 160px;
+  }
+
+  .swiper-slide {
+    width: 100%;
+  }
+}
+
+.swiper-pagination {
+  position: absolute;
+  z-index: 20;
+  bottom: 13px;
+  right: 9px;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background: @color-dark-divider;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.swiper-active-switch {
+  background: @color-main;
+  width: 12px;
+}

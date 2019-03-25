@@ -1,0 +1,165 @@
+@import "../base/base-var.less";
+@import "../components/pc_hot_search/pc_hot_search.less";
+@import "../components/pagination/pagination.less";
+@import "../components/breadcrumb/breadcrumb.less";
+
+.filter {
+  font-size: @font-size-normal;
+  margin-top: @gap-small-pc;
+
+  tr {
+    line-height: 2;
+  }
+
+  span {
+    color: @color-subtitle;
+  }
+
+  a {
+    color: @color-subtitle;
+
+    &:hover {
+      color: white;
+      background: @color-main;
+    }
+  }
+
+  td:nth-child(1) {
+    white-space: nowrap;
+    padding-right: @gap-small-pc;
+  }
+
+  .others {
+    a {
+      margin-right: @gap-small-pc;
+      white-space: nowrap;
+    }
+  }
+
+  a.current {
+    color: @color-main;
+    font-weight: bold;
+    &:hover {
+      color: white;
+      background: @color-main;
+    }
+  }
+}
+
+.note {
+  background: @color-divider;
+  font-size: @font-size-normal;
+  padding: @gap-large-pc;
+  line-height: 1.5;
+
+  h1 {
+    font-size: @font-size-larger;
+    font-weight: bold;
+  }
+  span {
+    color: @color-hot;
+  }
+}
+
+.platforms li {
+  border-top: 1px solid @color-divider;
+  &:nth-child(1) {
+    border: none;
+  }
+  &:hover {
+    background: @color-divider;
+  }
+  @media screen and (min-width: 540px) {
+    font-size: @font-size-normal;
+    height: 128px; // 偷懒了，应该每个列单独设置font-size，然后这里用em
+    padding: @gap-normal-pc 0;
+
+    & > span {
+      float: left;
+      width: 5%;
+      text-align: center;
+      line-height: 128px;
+    }
+    div:nth-child(2) {
+      float: left;
+      width: 30%;
+      height: 128px;
+      line-height: 128px;
+      text-align: center;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
+      }
+    }
+    div:nth-child(3) {
+      float: left;
+      width: 40%;
+      padding-left: @gap-large-pc;
+      box-sizing: border-box;
+      line-height: 2;
+    }
+    div:nth-child(4) {
+      float: left;
+      width: 25%;
+      text-align: center;
+      line-height: 2;
+      a {
+        display: block;
+        color: @color-hot;
+        font-size: @font-size-larger;
+      }
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    font-size: @font-size-smaller;
+    padding: @gap-small-m;
+    box-sizing: border-box;
+
+    & > span {
+      float: left;
+      width: 10%;
+      text-align: center;
+      line-height: 140px;
+    }
+    div:nth-child(2) {
+      float: left;
+      width: 25%;
+      height: 140px;
+      line-height: 140px;
+      text-align: center;
+      img {
+        max-width: 90%;
+        max-height: 100%;
+        vertical-align: middle;
+      }
+    }
+
+    div:nth-child(3) {
+      float: left;
+      width: 65%;
+      text-align: center;
+      line-height: 2;
+    }
+    div:nth-child(4) {
+      float: left;
+      width: 65%;
+      text-align: center;
+      line-height: 2;
+      a {
+        color: @color-hot;
+        margin-left: @gap-small-m;
+      }
+    }
+  }
+}
+
+.empty {
+  margin-top: @gap-large-pc;
+  font-weight: bold;
+  font-size: @font-size-normal;
+  text-align: center;
+  border: 1px solid @color-main;
+  padding: @gap-large-pc;
+}

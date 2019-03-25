@@ -1,0 +1,105 @@
+@import "../base/base-var.less";
+@import "../base/zt.less";
+@import "../components/pc_hot_search/pc_hot_search.less";
+@import "../components/breadcrumb/breadcrumb.less";
+@import "../components/rank_3type/rank_3type_small.less";
+@import "../components/platform_summary2/platform_summary2.less";
+@import "../components/platform_popup/platform_popup.less";
+
+.summary {
+  @media screen and (min-width: 540px) {
+    padding-bottom: @gap-normal-pc;
+  }
+  .icon {
+    float: left;
+    height: 164px;
+    line-height: 164px;
+    text-align: center;
+    @media screen and (max-width: 540px) {
+      width: 40%;
+    }
+    @media screen and (min-width: 540px) {
+      width: 30%;
+    }
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+  }
+  .info1 {
+    box-sizing: border-box;
+    line-height: 2;
+    @media screen and (max-width: 540px) {
+      float: right;
+      width: 60%;
+    }
+    @media screen and (min-width: 540px) {
+      float: left;
+      width: 40%;
+    }
+    h1 {
+      font-size: @font-size-larger;
+      font-weight: bold;
+    }
+    p:nth-child(2) {
+      font-size: @font-size-normal;
+      color: @color-subtitle;
+      a {
+        color: @color-hot;
+      }
+    }
+    p:nth-child(3) {
+      font-size: @font-size-normal;
+      color: @color-subtitle;
+      a {
+        background: @color-main;
+        color: white;
+        padding: 4px 6px;
+        border-radius: 4px;
+      }
+    }
+  }
+  .info2 {
+    box-sizing: border-box;
+    line-height: 2;
+    @media screen and (max-width: 540px) {
+      float: right;
+      width: 60%;
+    }
+    @media screen and (min-width: 540px) {
+      float: left;
+      width: 30%;
+    }
+    a {
+      color: @color-hot;
+    }
+    p {
+      font-size: @font-size-normal;
+    }
+  }
+}
+
+.subpages {
+  background: @color-main;
+  li {
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    text-align: center;
+    @media screen and (max-width: 540px) {
+      font-size: @font-size-smaller;
+      width: 20%;
+    }
+    @media screen and (min-width: 540px) {
+      font-size: @font-size-normal;
+      width: 100px;
+    }
+  }
+  a {
+    color: white;
+  }
+  .current {
+    background: darken(@color-main, 20%);
+  }
+}

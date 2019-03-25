@@ -1,0 +1,19 @@
+@import "../../base/base-var.less";
+.breadcrumb {
+  font-size: @font-size-smallest;
+  margin: @gap-normal-pc 0;
+
+  @media screen and (max-width: 540px) {
+    margin: @gap-normal-m;
+  }
+
+  a {
+    color: @color-note;
+    &:hover {
+      color: @color-main;
+    }
+  }
+  span {
+    color: @color-title;
+  }
+}

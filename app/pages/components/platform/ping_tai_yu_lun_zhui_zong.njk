@@ -1,0 +1,19 @@
+{# 平台详情 - 平台舆论追踪 #}
+<div id="ptylzz" class="pc-block m-block ptylzz platform-common">
+  <div class="plate-head clearfix">
+    <h2>平台舆情追踪</h2>
+    <a class="more" href="{{ ptylzz.more_url }}">查看更多&gt;</a>
+  </div>
+  {% if ptylzz and ptylzz.list and ptylzz.list.length!==0  %}
+  <div class="ptylzz-article">
+    {% for item in ptylzz.list %}
+    <div class="row clearfix">
+      <a href="{{ item.href }}"><span class="left elli-1">{{ item.title }}</span></a>
+      <span class="right">{{ item.shortTime }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="pf-no-article">该平台暂无动态，你可以<a href="#" class="popup-img"><span class="kankan">去社区看看</span></a></div>
+  {% endif %}
+</div>

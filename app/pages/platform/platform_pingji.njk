@@ -1,0 +1,98 @@
+{% extends '../base/base.njk' %}
+
+{% block title %}【{{ detail.name }}评级】 {{ detail.name }}评分,历史排名趋势图_互金跟投{% endblock %}
+{% block keywords %}{{ detail.name }}评级,{{ detail.name }}评分,{{ detail.name }}排名{% endblock %}
+{% block description %}互金跟投专家团根据{{ detail.name }}相关数据、信披、合规、资金流入率、运营情况、地域性、流动指数等多个维度进行评分，为您在{{ detail.name }}投资理财时提供参考。{% endblock %}
+
+{% block extraCss %}
+  {%- include "./platform_pingji.css" -%}
+{% endblock %}
+
+{% block content %}
+  {% include "../components/pc_hot_search/pc_hot_search.njk" %}
+
+  {% include "../components/breadcrumb/breadcrumb.njk" %}
+
+  <div class="summary m-block clearfix">
+    <div class="icon">
+      <img onerror="this.src='/image/default.png'" src="{{detail.img}}" alt="{{ detail.name }}" />
+    </div>
+    <div class="info1">
+      <h1>{{ detail.name }}</h1>
+      <p>收益率 <a href="{{ detail.rebateHref }}">{{ detail.rebate }}%</a></p>
+      <p>运营状态 <a href="{{ detail.stateHref }}">{{ detail.state }}</a></p>
+    </div>
+    <div class="info2">
+      <p>专家评级 <a href="{{ detail.scoreHref }}">{{ detail.score }}</a></p>
+      <p><a href="{{ detail.moreHref }}">查看更多评级排行 &gt;&gt;</a></p>
+    </div>
+  </div>
+
+  <ul class="subpages clearfix">
+    <li><a href="{{ baseUrl + '/' }}">首页</a></li>
+    <li><a href="{{ baseUrl + '/beian/' }}">档案</a></li>
+    <li class="current"><a href="{{ baseUrl + '/pingji/' }}">评测</a></li>
+    <li><a href="{{ baseUrl + '/guanfang/' }}">平台动态</a></li>
+    <li><a href="{{ baseUrl + '/news/' }}">新闻</a></li>
+  </ul>
+
+  <div class="clearfix">
+    <div class="pc-block-3-2">
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h2>专家评测</h2>
+        </div>
+        <div class="pingce">
+          {{ detail.pingce | safe }}
+        </div>
+      </div>
+
+      {% include "../components/ad/follow.njk" %}
+
+    </div>
+
+    <div class="pc-block-3-1">
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>行业新闻</h3>
+          <a class="more" href="{{ hyxw.more }}">更多新闻 &gt;</a>
+        </div>
+        <ul class="img-link-list clearfix">
+          {% for item in hyxw.items %}
+            <li>
+              <div class="clearfix">
+                <a href="{{ item.href }}"><img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" /></a>
+                <a href="{{ item.href }}">{{ item.text }}</a>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="pc-block m-block">
+        <div class="plate-head clearfix">
+          <h3>专题推荐</h3>
+          <a class="more" href="{{ zt.more }}">更多专题 &gt;</a>
+        </div>
+
+        <ul class="zt-list zt-list-v clearfix">
+          {% for item in zt.items %}
+            <li>
+              <a href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.text }}" />
+                <p>{{ item.text }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% include "../components/rank_3type/rank_3type_small.njk" %}
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block inlineJs %}
+  {% include "./platform_pingji.in.wp.js" %}
+{% endblock %}

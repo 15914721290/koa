@@ -1,0 +1,86 @@
+{% if resultCount == 0 %}
+  <div class="none">暂无搜索结果</div>
+  {% include "./recom.njk" %}
+{% else %}
+  {% if platform.length > 0 %}
+    <div class="pc-block m-block">
+      <div class="plate-head clearfix">
+        <p class="title">{{ query.key }} <span class="sub">相关平台</span></p>
+      </div>
+      {% for item in platform %}
+        <div class="platform clearfix">
+          <a class="icon" href="{{ item.href +'/' }}">
+            <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ query.key }}" />
+          </a>
+          <div class="detail clearfix">
+            <div><strong><a href="{{ item.href + '/' }}">{{ item.name | safe }}</a></strong></div>
+            <div>最新排名 <span class="sub">第{{ item.rank }}名</span></div>
+            <div>平均年化率 <span class="em">{{ item.rate }}%</span></div>
+            <div>专家评级 <span class="em">{{ item.score }}</span></div>
+            <div>运营状况 <span class="sub">{{ item.state }}</span></div>
+            <div>保障方式 <span class="sub">平台风险保证金</span></div>
+          </div>
+          <div class="subpage m-hidden">
+            <a href="{{ item.href + '/beian/' }}">平台档案</a>
+            <a href="{{ item.href + '/pingji/' }}">平台评测</a>
+            <a href="{{ item.href + '/news/' }}">最新资讯</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if news.length > 0 %}
+    <div class="pc-block m-block">
+      <div class="plate-head clearfix">
+        <p class="title">{{ query.key }} <span class="sub">相关资讯</span></p>
+      </div>
+      <ul class="news-list">
+          {% for item in news %}
+            <li class="clearfix">
+              <a class="left" href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+              </a>
+              <div class="right">
+                <p><strong><a href="{{ item.href }}">{{ item.title | safe }}</a></strong></p>
+                <p>{{ item.intro | safe }}</p>
+                <div>
+                  {{ item.time }}
+                  {% for label in item.labels %}
+                    <a href="{{ label.href }}">{{ label.inner }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+    </div>
+  {% endif %}
+
+  {% if baike.length > 0 %}
+    <div class="pc-block m-block">
+      <div class="plate-head clearfix">
+        <p class="title">{{ query.key }} <span class="sub">相关百科</span></p>
+      </div>
+      <ul class="news-list">
+          {% for item in baike %}
+            <li class="clearfix">
+              <a class="left" href="{{ item.href }}">
+                <img onerror="this.src='/image/default.png'" src="{{ item.img }}" alt="{{ item.title }}" />
+              </a>
+              <div class="right">
+                <p><strong><a href="{{ item.href }}">{{ item.title | safe }}</a></strong></p>
+                <p>{{ item.intro | safe }}</p>
+                <div>
+                  {{ item.time }}
+                  {% for label in item.labels %}
+                    <a href="{{ label.href }}">{{ label.inner }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+    </div>
+  {% endif %}
+{% endif %}
